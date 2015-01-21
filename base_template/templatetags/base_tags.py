@@ -15,7 +15,7 @@ register = template.Library()
 @library.global_function
 @register.simple_tag
 def locale_switcher(request, template='base_template/common/locale_switcher.html'):
-    locales = [lang_code for lang_code, name in settings.LANGUAGES]
+    locales = [lang_code for lang_code, name in django_settings.LANGUAGES]
     path = request.path
     if path[1:3] in locales:
         path = request.path[3:]

@@ -2,10 +2,10 @@
     <div class="container head-menu">
       <div class="navbar-header row">
         <ul class="nav navbar-nav visible-md visible-lg">
-            <li><a href="{% get_host() %}{% locale() %}/"><i class="ab ab-home"></i></a></li>
+            <li><a href="{{ get_host() }}{{ locale() }}/"><i class="ab ab-home"></i></a></li>
             <li><a id="to_autocentre_link" class="outer_link" href="http://www.autocentre.ua/">Autocentre.ua</a></li>
-            <li><a id="to_testdrive_link" class="outer_link" href="http://www.autocentre.ua/test-drives/test-drive/">{{ _('Тест-драйвы' }}</a></li>
-            <li><a href="{% locale() %}/help/main/">{{ _("Помощь") }}</a></li>
+            <li><a id="to_testdrive_link" class="outer_link" href="http://www.autocentre.ua/test-drives/test-drive/">{{ _('Тест-драйвы') }}</a></li>
+            <li><a href="{{ locale() }}/help/main/">{{ _("Помощь") }}</a></li>
             <li><!--noindex--><a class="onlinehelp" href="https://siteheart.com/webconsultation/684708?byhref=1" onclick="o=window.open;o('https://siteheart.com/webconsultation/684708', 'siteheart_sitewindow_11877', 'width=550,height=400,top=30,left=30,resizable=yes'); return false;" target="siteheart_sitewindow_11877" rel="nofollow">{{ _("Поддержка он-лайн") }}</a><!--/noindex--></li>
             <li class="dropdown">
                <a href="javascript:void(0)"  class="dropdown-toggle" data-toggle="dropdown">
@@ -20,7 +20,7 @@
         </ul>
         <div class="btn btn-warning" id="old_site">{{ _('На старый сайт') }}</div>
         <div class="btn-group user pull-right">{# look  to static/dev/src/coffee/apps/ab_generic/views...#}</div>
-        <div class="btn-group language pull-right hidden-xs">{% locale_switcher(request) %}</div>
+        <div class="btn-group language pull-right hidden-xs">{{ locale_switcher(request) }}</div>
       </div>
     </div>
 </div>
@@ -29,8 +29,8 @@
 <div class="container logo-search hidden-xs">
     <div class="row">
       <div class="col-md-4 col-sm-6 logo col-xs-12">
-        <a id="logo_home_link" href="{% get_host() %}{% locale() %}/" title="АвтоБазар">
-            <img src="{% static_image('img/common/logo/ab_logo_grey.png') %}" alt="{{ _('АвтоБазар') }}"></a>
+        <a id="logo_home_link" href="{{ get_host() }}{{ locale() }}/" title="АвтоБазар">
+            <img src="{{ static_image('img/common/logo/ab_logo_grey.png') }}" alt="{{ _('АвтоБазар') }}"></a>
         </a>
       </div>
       <div class="col-md-4 col-sm-6 col-xs-12 hidden-sm">

@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <a href="{{ locale() }}/" title="АвтоБазар">
-        <img width="195" height="22" alt="{{ _('АвтоБазар') }}" src="{% static_image('img/frontend/footer/mainlogo_grey.png') %}" />
+        <img width="195" height="22" alt="{{ _('АвтоБазар') }}" src="{{ static_image('img/frontend/footer/mainlogo_grey.png') }}" />
       </a>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <a class="store_{% language() %}" href="{{ locale() }}/iphone/">{{ _('Скачать в') }} App Store</a>
-      <a class="play_{% language() %}" href="{{ locale() }}/android/">{{ _('Скачать в') }} Google play</a>
+      <a class="store_{{ language() }}" href="{{ locale() }}/iphone/">{{ _('Скачать в') }} App Store</a>
+      <a class="play_{{ language() }}" href="{{ locale() }}/android/">{{ _('Скачать в') }} Google play</a>
     </div>
     <div class="col-xs-12 col-sm-4">
       <div class="socials clearfix">
