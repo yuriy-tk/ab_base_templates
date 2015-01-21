@@ -1,4 +1,6 @@
 #encoding: utf-8
+from datetime import datetime
+
 from django import template
 from django_jinja import library
 from django.utils.translation import get_language
@@ -14,7 +16,7 @@ register = template.Library()
 
 @library.global_function
 @register.simple_tag
-def locale_switcher(request, template='base_template/common/locale_switcher.jinja'): 
+def locale_switcher(request, template='base_template/common/locale_switcher.jinja'):
     locales = [lang_code for lang_code, name in django_settings.LANGUAGES]
     path = request.path
     if path[1:3] in locales:
@@ -79,3 +81,8 @@ def javascript(path):
 @register.simple_tag
 def plugin(path):
     return do_media(settings.BASE_STATIC_URL, path)
+
+@library.global_function
+@register.simple_tag
+def now(_format):
+    return datetime.now().strftime(_format)
