@@ -1,6 +1,6 @@
 #encoding: utf-8
 from datetime import datetime
-
+from jinja2 import Markup
 from django import template
 from django_jinja import library
 from django.utils.translation import get_language
@@ -27,7 +27,7 @@ def locale_switcher(request, template='base_template/common/locale_switcher.jinj
     if GET:
         path = u'{0}?{1}'.format(path, GET.urlencode())
 
-    return render_to_string(template, {'path': path, 'settings': django_settings, 'current_language': get_language()})
+    return Markup(render_to_string(template, {'path': path, 'settings': django_settings, 'current_language': get_language()}))
 
 @library.global_function
 @register.simple_tag
