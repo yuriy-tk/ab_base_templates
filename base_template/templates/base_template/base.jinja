@@ -63,5 +63,11 @@
           {% include 'base_template/common/footer.jinja' %}
         </div>
     </div>
+    <script src="{{ javascript('js/libs.js') }}"></script>
+    <script src="{{ javascript('js/templates.js') }}"></script>
+    {% with locale_data_path='js/locale/'|add(language())|add('/i18n.js') %}
+        <script src="{{ javascript(locale_data_path) }}"></script>
+    {% endwith %}
+    <script src="{{ javascript('js/apps/ab.js') }}"></script>
   </body>
 </html>
