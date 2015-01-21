@@ -1,0 +1,178 @@
+{% load i18n common_extras %}
+{% load url from future %}
+{% assign active_menu active.translit %}
+<nav class="navbar navbar-default ab-navbar" role="navigation">
+  <div class="container main-menu">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#ab-navbar">
+        <span class="sr-only">{% trans 'Показать меню' %}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand visible-xs col-xs-8" href="/">
+          <img class="logo" src="{% static_image 'img/frontend/main_header/mainlogo.v2.png' %}" alt="{% trans 'АвтоБазар'%}">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="ab-navbar">
+      <ul class="nav navbar-nav">
+        <li class="hidden-xs adverts-count">{% adverts_count_all %}</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li {% if active_menu in 'cars-poisk,moto-poisk,busses-poisk,trucks-poisk,trailers-poisk,technics-poisk,water-poisk,cars-newcars'|split:"," %}class="active"{% endif %}><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{% trans 'Поиск' %}</a>
+             <ul class="dropdown-menu">
+                <li><a href="{% locale %}/poisk/avto/"><span class="ab ab-avto"></span>{% trans 'Легковые' %}</a></li>
+                <li><a href="{% locale %}/poisk/avtobus/"><span class="ab ab-avtobus"></span>{% trans 'Автобусы' %}</a></li>
+                <li><a href="{% locale %}/poisk/gruzovye/"><span class="ab ab-gruzovye"></span>{% trans 'Грузовые' %}</a></li>
+                <li><a href="{% locale %}/poisk/moto/"><span class="ab ab-moto"></span>{% trans 'Мото' %}</a></li>
+                <li><a href="{% locale %}/poisk/technics/"><span class="ab ab-technics"></span>{% trans 'Спецтехника' %}</a></li>
+                <li><a href="{% locale %}/poisk/trailer/"><span class="ab ab-trailer"></span>{% trans 'Прицепы' %}</a></li>
+                <li><a href="{% locale %}/poisk/water"><span class="ab ab-water"></span>{% trans 'Водный' %}</a></li>
+                <li><a href="{% locale %}/poisk/avia/"><span class="ab ab-avia"></span>{% trans 'Авиа' %}</a></li>
+                <li><a href="{% locale %}/zapchasti/partitions/"><span class="ab ab-spares"></span>{% trans 'Запчасти' %}</a></li>
+                <li><a href="{% locale %}/garaji/"><span class="ab ab-garage"></span>{% trans 'Гаражи' %}</a></li>
+                <li><a href="{% locale %}/buy/"><span class="ab ab-buy"></span>{% trans 'Куплю' %}</a></li>
+                <li><a href="{% locale %}/uslugi/"><span class="ab ab-uslugi"></span>{% trans 'Услуги' %}</a></li>
+                <li><a href="{% locale %}/rabota/"><span class="ab ab-job"></span>{% trans 'Работа' %}</a></li>
+                <li><a href="{% locale %}/drugoe/"><span class="ab ab-file"></span>{% trans 'Разное' %}</a></li>
+                <li><a href="{% locale %}/katalog/"><span class="ab ab-phone"></span>{% trans 'Фирмы/Дилеры' %}</a></li>
+                <li><a href="{% locale %}/avtotovary/"><span class="ab ab-cart3"></span>{% trans 'Товары' %}</a></li>
+              </ul>
+          </li>
+          <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{% trans 'Продать' %}</a>
+             <ul class="dropdown-menu">
+                <li><a href="{% url 'add-car' %}"><span class="ab ab-avto"></span>{% trans 'Легковые' %}</a></li>
+                <li><a href="{% url 'add-bus' %}"><span class="ab ab-avtobus"></span>{% trans 'Автобусы' %}</a></li>
+                <li><a href="{% url 'add-truck' %}"><span class="ab ab-gruzovye"></span>{% trans 'Грузовые' %}</a></li>
+                <li><a href="{% url 'add-moto' %}"><span class="ab ab-moto"></span>{% trans 'Мото' %}</a></li>
+                <li><a href="{% url 'add-technics' %}"><span class="ab ab-technics"></span>{% trans 'Спецтехника' %}</a></li>
+                <li><a href="{% url 'add-trailer' %}"><span class="ab ab-trailer"></span>{% trans 'Прицепы' %}</a></li>
+                <li><a href="{% url 'add-water' %}"><span class="ab ab-water"></span>{% trans 'Водный' %}</a></li>
+                <li><a href="{% url 'add-avia' %}"><span class="ab ab-avia"></span>{% trans 'Авиа' %}</a></li>
+                <li><a href="{% url 'add-spare-part' %}"><span class="ab ab-spares"></span>{% trans 'Запчасти' %}</a></li>
+                <li><a href="{% url 'sell_buy' '' %}"><span class="ab ab-buy"></span>{% trans 'Куплю' %}</a></li>
+                <li><a href="{% url 'sell_sundries' '' %}"><span class="ab ab-file"></span>{% trans 'Разное' %}</a></li>
+                <li><a href="javascript:void(0)"><span class="ab ab-question"></span>{% trans 'Как продать?' %}</a></li>
+              </ul>
+          </li>
+          <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{% trans 'Полезное' %}</a>
+             <ul class="dropdown-menu">
+                <li><a href="otzyvy">{% trans 'Тесты и отзывы' %}</a></li>
+                <li><a href="{% locale %}/newcars/news/">{% trans 'Новости' %}</a></li>
+                <li><a href="http://notes.avtobazar.ua/">{% trans 'Бортовой журнал' %}</a></li>
+                <li><a href="{% locale %}/valuation/">{% trans 'Оценка авто' %}</a></li>
+                <li><a href="{% locale %}/tv/">{% trans 'АвтоБазар TV' %}</a></li>
+                <li><a href="{% locale %}/iphone/">{% trans 'iPhone' %}</a></li>
+                <li><a href="{% locale %}/android/">{% trans 'Android' %}</a></li>
+                <li><a href="{% locale %}/poleznoe/sovety/">{% trans 'Советы' %}</a></li>
+                <li><a href="{% locale %}/shinnyy-calculator/">{% trans 'Шинный калькулятор' %}</a></li>
+                <li><a href="{% locale %}/katalog/country:ukraine/groups:sto:diagnostika-avto/">{% trans 'Диагностика Авто' %}</a></li>
+                <li><a href="{% locale %}/katalog/country:ukraine/groups:avtokreditovanie/">{% trans 'Автокредитирование' %}</a></li>
+                <li><a href="{% locale %}/katalog/">{% trans 'Найти автосалон' %}</a></li>
+                <li><a href="{% locale %}/help/main/">{% trans 'Помощь' %}</a></li>
+              </ul>
+          </li>
+          <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{% trans 'Дилеры' %}</a>
+             <ul class="dropdown-menu">
+                <!--<li><a href="{% locale %}/dealer/">{% trans 'Как стать дилером' %}</a></li>-->
+                <li><a href="{% locale %}/avtosalony/new/">{% trans 'Тарифные планы' %}</a></li>
+              </ul>
+          </li>
+          <li class="moy-avtobazar">
+            {% if request.user.is_authenticated %}
+                <a href="{% locale %}/moy-avtobazar/" {% if item.new_window %}target="_blank"{% endif %} onClick="ga('send', 'event', 'AB_Tracking', 'Menu', '{{item.title}}');">{% trans 'Мой АвтоБазар' %}</a>
+            {% else %}
+                <a href="{% locale %}/favorites/avto/" {% if item.new_window %}target="_blank"{% endif %} onClick="ga('send', 'event', 'AB_Tracking', 'Menu', '{{item.title}}');">{% trans 'Мой АвтоБазар' %}</a>
+            {% endif %}
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% comment %}
+<div class="row top-menu">
+  <div class="col-lg-6 col-md-5 hidden-xs">
+    <p class="adverts-count">{% adverts_count_all %}</p>
+  </div>
+  <div class="col-lg-6 col-md-7 col-sm-12">
+  <ul class="nav-pills nav">
+      <li {% if active_menu in 'cars-poisk,moto-poisk,busses-poisk,trucks-poisk,trailers-poisk,technics-poisk,water-poisk,cars-newcars'|split:"," %}class="active"{% endif %}><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{% trans 'Поиск' %}</a>
+         <ul class="dropdown-menu">
+            <li><a href="{% locale %}/poisk/avto/"><span class="ab ab-avto"></span>{% trans 'Легковые' %}</a></li>
+            <li><a href="{% locale %}/poisk/avtobus/"><span class="ab ab-avtobus"></span>{% trans 'Автобусы' %}</a></li>
+            <li><a href="{% locale %}/poisk/gruzovye/"><span class="ab ab-gruzovye"></span>{% trans 'Грузовые' %}</a></li>
+            <li><a href="{% locale %}/poisk/moto/"><span class="ab ab-moto"></span>{% trans 'Мото' %}</a></li>
+            <li><a href="{% locale %}/poisk/technics/"><span class="ab ab-technics"></span>{% trans 'Спецтехника' %}</a></li>
+            <li><a href="{% locale %}/poisk/trailer/"><span class="ab ab-trailer"></span>{% trans 'Прицепы' %}</a></li>
+            <li><a href="{% locale %}/poisk/water"><span class="ab ab-water"></span>{% trans 'Водный' %}</a></li>
+            <li><a href="{% locale %}/poisk/avia/"><span class="ab ab-avia"></span>{% trans 'Авиа' %}</a></li>
+            <li><a href="{% locale %}/za/partions/"><span class="ab ab-spares"></span>{% trans 'Запчасти' %}</a></li>
+            <li><a href="{% locale %}/garaji/"><span class="ab ab-garage"></span>{% trans 'Гаражи' %}</a></li>
+            <li><a href="{% locale %}/buy/"><span class="ab ab-buy"></span>{% trans 'Куплю' %}</a></li>
+            <li><a href="{% locale %}/uslugi/"><span class="ab ab-uslugi"></span>{% trans 'Услуги' %}</a></li>
+            <li><a href="{% locale %}/rabota/"><span class="ab ab-job"></span>{% trans 'Работа' %}</a></li>
+            <li><a href="{% locale %}/drugoe/"><span class="ab ab-file"></span>{% trans 'Разное' %}</a></li>
+            <li><a href="{% locale %}/katalog/"><span class="ab ab-phone"></span>{% trans 'Фирмы/Диллеры' %}</a></li>
+            <li><a href="{% locale %}/avtotovary/"><span class="ab ab-cart3"></span>{% trans 'Товары' %}</a></li>
+          </ul>
+      </li>
+      <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{% trans 'Продать' %}</a>
+         <ul class="dropdown-menu">
+            <li><a href="javascript:void(0)"><span class="ab ab-avto"></span>{% trans 'Легковые' %}</a></li>
+            <li><a href="javascript:void(0)"><span class="ab ab-avtobus"></span>{% trans 'Автобусы' %}</a></li>
+            <li><a href="javascript:void(0)"><span class="ab ab-gruzovye"></span>{% trans 'Грузовые' %}</a></li>
+            <li><a href="javascript:void(0)"><span class="ab ab-moto"></span>{% trans 'Мото' %}</a></li>
+            <li><a href="javascript:void(0)"><span class="ab ab-technics"></span>{% trans 'Спецтехника' %}</a></li>
+            <li><a href="javascript:void(0)"><span class="ab ab-trailer"></span>{% trans 'Прицепы' %}</a></li>
+            <li><a href="javascript:void(0)"><span class="ab ab-water"></span>{% trans 'Водный' %}</a></li>
+            <li><a href="javascript:void(0)"><span class="ab ab-avia"></span>{% trans 'Авиа' %}</a></li>
+            <li><a href="javascript:void(0)"><span class="ab ab-spares"></span>{% trans 'Запчасти' %}</a></li>
+            <li><a href="javascript:void(0)"><span class="ab ab-buy"></span>{% trans 'Куплю' %}</a></li>
+            <li><a href="javascript:void(0)"><span class="ab ab-file"></span>{% trans 'Разное' %}</a></li>
+            <li><a href="javascript:void(0)"><span class="ab ab-question"></span>{% trans 'Как продать?' %}</a></li>
+          </ul>
+      </li>
+      <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{% trans 'Полезное' %}</a>
+         <ul class="dropdown-menu">
+            <li><a href="otzyvy">{% trans 'Тесты и отзывы' %}</a></li>
+            <li><a href="{% locale %}/newcars/news/">{% trans 'Новости' %}</a></li>
+            <li><a href="http://notes.avtobazar.ua/">{% trans 'Бортовой журнал' %}</a></li>
+            <li><a href="{% locale %}/valuation/">{% trans 'Оценка авто' %}</a></li>
+            <li><a href="{% locale %}/tv/">{% trans 'АвтоБазар TV' %}</a></li>
+            <li><a href="{% locale %}/iphone/">{% trans 'iPhone' %}</a></li>
+            <li><a href="{% locale %}/android/">{% trans 'Android' %}</a></li>
+            <li><a href="{% locale %}/poleznoe/sovety/">{% trans 'Советы' %}</a></li>
+            <li><a href="{% locale %}/shinnyy-calculator/">{% trans 'Шинный калькулятор' %}</a></li>
+            <li><a href="{% locale %}/katalog/country:ukraine/groups:sto:diagnostika-avto/">{% trans 'Диагностика Авто' %}</a></li>
+            <li><a href="{% locale %}/katalog/country:ukraine/groups:avtokreditovanie/">{% trans 'Автокредитирование' %}</a></li>
+            <li><a href="{% locale %}/katalog/">{% trans 'Найти автосалон' %}</a></li>
+            <li><a href="{% locale %}/help/main/">{% trans 'Помощь' %}</a></li>
+          </ul>
+      </li>
+      <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{% trans 'Дилерам' %}</a>
+         <ul class="dropdown-menu">
+            <li><a href="{% locale %}/dealer/">{% trans 'Как стать дилером' %}</a></li>
+            <li><a href="{% locale %}/dealer/tariffs/">{% trans 'Тарифные планы' %}</a></li>
+          </ul>
+      </li>
+      <li>
+        {% if request.user.is_authenticated %}
+            <a href="{% locale %}/moy-avtobazar/" {% if item.new_window %}target="_blank"{% endif %} onClick="ga('send', 'event', 'AB_Tracking', 'Menu', '{{item.title}}');">{% trans 'Мой АвтоБазар' %}</a>
+        {% else %}
+            <a href="{% locale %}/favorites/avto/" {% if item.new_window %}target="_blank"{% endif %} onClick="ga('send', 'event', 'AB_Tracking', 'Menu', '{{item.title}}');">{% trans 'Мой АвтоБазар' %}</a>
+        {% endif %}
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row menu-line">
+</div>
+<div class="row bottom-submenu hide">
+  <ul class="nav-pills nav nav-justified">
+    <li class="active">{{ active.parent.title }}</li>
+    {% for item in active.get_root_menu.get_children.all %}
+      <li><a href="{{ item.get_url }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endcomment %}

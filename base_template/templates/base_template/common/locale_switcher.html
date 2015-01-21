@@ -1,0 +1,14 @@
+{% for lang in settings.LANGUAGES %}
+    {% if current_language == lang.0 %}
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            {{lang.1}} <span class="caret"></span>
+        </button>
+    {% endif %}
+{% endfor %}
+<ul class="dropdown-menu" role="menu">
+{% for lang in settings.LANGUAGES %}
+    {% if current_language != lang.0 %}
+        <li><a href="/{{lang.0}}{{path}}">{{lang.1}}</a></li>
+    {% endif %}
+{% endfor %}
+</ul>

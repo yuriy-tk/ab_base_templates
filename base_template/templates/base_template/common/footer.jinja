@@ -1,0 +1,60 @@
+<div class="foot_v3">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <a href="{{ locale() }}/" title="АвтоБазар">
+        <img width="195" height="22" alt="{{ _('АвтоБазар') }}" src="{% static_image('img/frontend/footer/mainlogo_grey.png') %}" />
+      </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <a class="store_{% language() %}" href="{{ locale() }}/iphone/">{{ _('Скачать в') }} App Store</a>
+      <a class="play_{% language() %}" href="{{ locale() }}/android/">{{ _('Скачать в') }} Google play</a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="socials clearfix">
+        <a href="http://www.facebook.com/AvtoBazar.Ukr" target="_blank" title="{{ _('АвтоБазар на') }} Facebook"><i class="ab ab-facebook"></i></a>
+        <a href="https://twitter.com/avtobazar" target="_blank" title="{{ _('АвтоБазар на') }} Twitter"><i class="ab ab-twitter"></i></a>
+        <a href="https://plus.google.com/+avtobazar/posts" target="_blank" title="{{ _('АвтоБазар на') }} Google+"><i class="ab ab-google"></i></a>
+        <a href="http://www.youtube.com/avtobazar" target="_blank" title="{{ _('АвтоБазар на') }} YouTube"><i class="ab ab-youtube"></i></a>
+        <a href="http://vk.com/portal_avtobazar" target="_blank" title="{{ _('Автобазар в ВКОНТАКТЕ') }}"><i class="fa fa-vk"></i></a>
+        {# <a class="odnoklassniki" href="http://www.odnoklassniki.ru/group/52076043763791" rel="nofollow" target="_blank" title="{{ _('АвтоБазар на') }} Odnoklassniki">{{ _('АвтоБазар на') }} Odnoklassniki</a> #}
+      </div>
+    </div>
+  </div>
+  <div class="sprt"></div>
+  <div class="row bottom-info">
+    <div class="col-sm-4 col-xs-12">
+      <p>&copy; {% now("Y") %} {{ _('ДИМЕДИАГРУПП') }}</p>
+      <p class="copytext">{{ _('Использование материалов сайта') }}<br /><a href="{{ locale() }}/">{{ _('АвтоБазар') }}</a> {{ _('без письменного разрешения <br />ООО «ДИМЕДИАГРУПП» не допускается.') }}</p>
+      <p class="hdr_h4">{{ _('Служба поддержки:') }} <span class="phone">(044) 206-56-06</span></p>
+      <p class="mail">support@avtobazar.ua</p>
+    </div>
+    <div class="col-xs-12 col-sm-4 hidden-xs">
+      <div class="mid_links">
+          <p><a href="http://avtobazar.ua{{ locale() }}/help/regionals/">{{ _('Региональные представительства, <br />пункты приема объявлений') }}</a></p>
+          <p><a href="http://avtobazar.ua{{ locale() }}/" title="{{ _('Купить авто') }}">{{ _('Купить авто') }}</a></p>
+          <p><a href="http://avtobazar.ua{{ locale() }}/sitemap/">{{ _('Карта сайта') }}</a></p>
+          <p><a href="http://avtobazar.ua{{ locale() }}/help/law/">{{ _('Политика конфиденциальности') }}</a></p>
+      </div>
+      <div class="partners">
+        <div class="hdr"><a href="javascript:void(0)">{{ _('Партнеры АвтоБазара') }}</a></div>
+          <ul>
+              <li><a class="outer_link" href="http://www.1auto.tv/" target="_blank" title="{{ _('Первый Автомобильный телеканал') }}">1auto.tv</a></li>
+              <li><a class="outer_link" href="http://newcars.ua/" target="_blank" title="{{ _('новые автомобили') }}">newcars.ua</a></li>
+              <li><a class="outer_link" href="http://avtomag.autocentre.ua/" target="_blank" title="{{ _('продажа авто') }}">avtomag.ua</a></li>
+              <li><a class="outer_link" href="http://mirkvartir.ua/" target="_blank" title="{{ _('недвижимость') }}">mirkvartir.ua</a></li>
+              <li><a class="outer_link" href="http://www.autocentre.ua/" target="_blank" title="{{ _('продажа авто и транспорта') }}">autocentre.ua</a></li>
+              <li><a class="outer_link" href="http://motornews.ua/" target="_blank" title="{{ _('автомобильный журнал') }}">motornews.ua</a></li>
+              <li><a class="outer_link" href="http://www.autobild.ua/" target="_blank" title="{{ _('автомобильный журнал') }}">autobild.ua</a></li>
+              <li><a class="outer_link" href="http://bazar.ua/" target="_blank" title="{{ _('загородная недвижимость') }}">bazar.ua</a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <p><a href="http://avtobazar.ua{{ locale() }}/new/prodazha/avto/" title="{{ _('Подать авто объявление на Автобазаре') }}">{{ _('Подать объявление на Автобазар') }}</a></p>
+      <p><a href="http://avtobazar.ua{{ locale() }}/help/prices/">{{ _('Стоимость размещения объявлений') }}</a></p>
+      <p><a href="http://avtobazar.ua{{ locale() }}/help/terms/">{{ _('Условия размещения объявлений') }}</a></p>
+      <p><a href="http://avtobazar.ua{{ locale() }}/help/unlim/">{{ _('Пакетное размещения объявлений') }}</a></p>
+      <p><a href="http://www.autocentre.ua/about.html" target="_blank">{{ _('Реклама на АвтоБазаре') }}</a></p>
+    </div>
+  </div>
+</div>

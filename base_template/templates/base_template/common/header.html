@@ -1,0 +1,114 @@
+{% load i18n common_extras common_cache sekizai_tags menu_tags %}
+{% load url from future %}
+<div class="head-menu-wrap">
+    <div class="container head-menu">
+      <div class="navbar-header row">
+        <ul class="nav navbar-nav visible-md visible-lg">
+            <li><a href="{{settings.HOST}}{% locale %}/"><i class="ab ab-home"></i></a></li>
+            <li><a class="outer_link" href="http://www.autocentre.ua/" onClick="ga('send', 'event', 'AB_Tracking', 'Header_Ac_Link', 'АЦ_Autocentre.ua');">Autocentre.ua</a></li>
+            <li><a class="outer_link" href="http://www.autocentre.ua/test-drives/test-drive/" onClick="ga('send', 'event', 'AB_Tracking', 'Header_Ac_Link', 'АЦ_Тест-драйвы');">{% trans 'Тест-драйвы' %}</a></li>
+            <li><a href="{% locale %}/help/main/">{% trans "Помощь" %}</a></li>
+            <li><!--noindex--><a class="onlinehelp" href="https://siteheart.com/webconsultation/684708?byhref=1" onclick="o=window.open;o('https://siteheart.com/webconsultation/684708', 'siteheart_sitewindow_11877', 'width=550,height=400,top=30,left=30,resizable=yes'); return false;" target="siteheart_sitewindow_11877" rel="nofollow">{% trans "Поддержка он-лайн" %}</a><!--/noindex--></li>
+            <li class="dropdown">
+               <a href="javascript:void(0)"  class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="glyphicon glyphicon-phone-alt"></i> <span class="caret"></span>
+               </a>
+                  <ul class="dropdown-menu phones" role="menu">
+                    <li><a><small>(044)</small> 206-56-06</a></li>
+                    <li><a><small>(093)</small> 170-00-10</a></li>
+                    <li><a><small>(067)</small> 236-54-48</a></li>
+                  </ul>
+            </li>
+        </ul>
+        <div class="btn btn-warning" id="old_site">{% trans 'На старый сайт' %}</div>
+        <div class="btn-group user pull-right">{# look  to static/dev/src/coffee/apps/ab_generic/views...#}</div>
+        <div class="btn-group language pull-right hidden-xs">{% locale_switcher request 'common/locale_switcher_v2.html' %}</div>
+      </div>
+    </div>
+</div>
+
+
+<div class="container logo-search hidden-xs">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 logo col-xs-12">
+
+        <a href="{{settings.HOST}}{% locale %}/" title="{% if active_menu %}{% get_main_logo_title request active_menu %}{% else %}{% get_main_logo_title request %}{% endif %}" onClick="ga('send', 'event', 'AB_Tracking', 'Header_Add_Auto', 'Размещение_объявления');">
+        <img src="{% static_image 'img/common/logo/ab_logo_grey.png' %}" alt="{% trans 'АвтоБазар'%}"></a>
+            {% comment %}{# PURE CSS LOGO #}
+             <div class="ab-logo ab-middle">
+                <div class="ab-logo-container">
+                    <div class="left"></div><div class="right"></div>
+                    <div class="top">
+                        <div class="radius"></div>
+                        <div class="panel-top"></div>
+                        <div class="panel-bottom"></div>
+                    </div>
+                    <div class="bottom">
+                        <div class="radius"></div>
+                        <div class="panel-top"></div>
+                        <div class="panel-bottom"></div>
+                    </div>
+                </div>
+                <span class="h1">AvtoBazar.ua</span>
+            </div>{% endcomment %}
+        </a>
+        <img style="width:auto; position:absolute; right:70px; top:30px;" src="{% static_image 'img/frontend/main_header/united_ukraine_'|add:current_language|add:'.png' %}" alt="{% trans 'Україна єдина!'%}">
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12 hidden-sm">
+        {% block top-search-group %}
+          {% cache settings.CACHE_CLASSIFIER 'base_top_search_form_v2' request.path current_language %}
+            <form method="get" action="{% if active_menu %}{% url 'search_text_filter' page='' filter=active_menu|get_advert_type_pk_by_menu %}{% else %}{% url 'search_text' page='' %}{% endif %}" id="top-search-form" >
+            <div class="input-group search">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu search-types">
+                <li><a href="javascript:void(0)" data-type="adverts">{% trans 'объявления' %}</a></li>
+                <li><a href="javascript:void(0)" data-type="avtotovary">{% trans 'автотовары' %}</a></li>
+                <li><a href="javascript:void(0)" data-type="katalog">{% trans 'фирмы' %}</a></li>
+                <li><a href="javascript:void(0)" data-type="zapchasti">{% trans 'номер запчасти' %}</a></li>
+              </ul>
+            </div>
+            <input type="text" class="form-control" placeholder="{% trans 'например карбюратор' %}" id="q" name="q" autocomplete="off">
+            <div class="input-group-btn">
+              <button id="text-search-button" type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+           </div>
+          </form>
+          {% endcache %}
+      {% endblock %}
+      </div>
+      <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-2 hidden-xs add-advert-btn-cont">
+         {% block add-advert-button %}
+            <div class="btn-group btn-block add-advert-btn-group">
+                <button type="button" class="btn btn-danger btn-block btn-lg dropdown-toggle" data-toggle="dropdown">{% trans 'Продать авто' %} <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{% url 'add-car' %}"><i class="ab ab ab-avto"></i> {% trans 'Легковые' %}</a></li>
+                    <li><a href="{% url 'add-bus' %}"><i class="ab ab-avtobus"></i> {% trans 'Автобусы' %}</a></li>
+                    <li><a href="{% url 'add-truck' %}"><i class="ab ab-gruzovye"></i> {% trans 'Грузовые' %}</a></li>
+                    <li><a href="{% url 'add-moto' %}"><i class="ab ab-moto"></i> {% trans 'Мототехника' %}</a></li>
+                    <li><a href="{% url 'add-technics' %}"><i class="ab ab-technics"></i> {% trans 'Спецтехника' %}</a></li>
+                    <li><a href="{% url 'add-trailer' %}"><i class="ab ab-trailer"></i> {% trans 'Прицепы' %}</a></li>
+                    <li><a href="{% url 'add-water' %}"><i class="ab ab-water"></i> {% trans 'Водный транспорт' %}</a></li>
+                    <li><a href="{% url 'add-avia' %}"><i class="ab ab-avia"></i> {% trans 'Авиа транспорт' %}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="{% url 'add-spare-part' %}"><i class="ab ab-spares"></i> {% trans 'Запчасти' %}</a></li>
+                    <li><a href="{% url 'sell_sundries' '' %}"><i class="ab ab-file"></i>{% trans 'Разное' %}</a></li>
+                    <li><a href="{% url 'sell_buy' '' %}"><i class="ab ab-buy"></i>{% trans 'Куплю' %}</a></li>
+                </ul>
+            </div>
+         {% endblock %}
+      </div>
+    </div>
+</div>
+{% block main-menu %}
+    <div class="container main-menu">
+    {% load menu_tags %}
+    {% if active_menu %}
+    {% header_menu_v2 request active_menu %}
+    {% else %}
+    {% header_menu_v2 request %}
+    {% endif %}
+    </div>
+{% endblock %}

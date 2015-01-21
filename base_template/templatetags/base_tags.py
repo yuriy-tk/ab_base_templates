@@ -2,11 +2,45 @@
 from django import template
 from django_jinja import library
 from django.utils.translation import get_language
+from django.template.loader import render_to_string
+from django.conf import settings as django_settings
 
 from base_template import settings
 
 
+
 register = template.Library()
+
+
+@library.global_function
+@register.simple_tag
+def locale_switcher(request, template='base_template/common/locale_switcher.html'):
+    locales = [lang_code for lang_code, name in settings.LANGUAGES]
+    path = request.path
+    if path[1:3] in locales:
+        path = request.path[3:]
+    GET = request.GET
+    if hasattr(request, 'GET_backuped'):
+        GET = request.GET_backuped
+    if GET:
+        path = u'{0}?{1}'.format(path, GET.urlencode())
+
+    return render_to_string(template, {'path': path, 'settings': django_settings, 'current_language': get_language()})
+
+@library.global_function
+@register.simple_tag
+def get_host():
+    return django_settings.HOST
+
+
+@library.global_function
+@register.simple_tag
+def locale():
+    _language = get_language()
+    if _language == django_settings.LANGUAGE_CODE:
+        return ''
+    return '/%s' % _language
+
 
 @register.simple_tag
 @library.global_function
