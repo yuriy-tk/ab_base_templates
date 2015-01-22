@@ -1,0 +1,77 @@
+{% block promoted%}
+<div class="row top-advert-header orange">
+    <div class="col-xs-12">
+        <p>{{ _('Выгодное предложение') }}</p>
+    </div>
+</div>
+{% endblock %}
+
+<div class="row advert-item{% block custom_class %}{% endblock %}" data-href="{{ locale() }}/{{ obj.get_absolute_url()}}">
+    <a href="{{ locale() }}/{{ obj.get_absolute_url() }}" title="{% block item_header_atitle %}{% endblock %}">
+    <div class="col-xs-12 col-sm-5 col-sm-push-4 title-teh-data">
+        <h4>
+            {% block item_header %}{{ obj.title }}{% endblock %}
+        </h4>
+        {% block item_main_info_list %}
+            <ul class="hidden-xs teh-data">
+                <li>[Двигатель]</li>
+                <li>[пробег]</li>
+                <li>[КПП]</li>
+                <li>[цвет]</li>
+            </ul>
+        {% endblock %}
+        <p class="hidden-xs additional-data">
+            {% block item_statuses %}{% endblock %}
+        </p>
+    </div>
+    <meta itemprop="name" content="{{ obj.title }}" />
+    <meta itemprop="url" content="{{ locale() }}/{{ obj.get_absolute_url }}" />
+    <div class="col-xs-6 col-sm-4 col-sm-pull-5 photo">
+        <div class="photo-wrap">
+        {% block item-image %}
+            <meta itemprop="image" content="{{ obj.get_photo_first }}" />
+            <img src="{{ obj.get_photo_first }}"
+                 alt="{% block item_image_alt %}{{ obj.title }}{% endblock %}"
+                 title="{% block item_image_title %}{{ obj.title }}{% endblock %}"/>
+        {% endblock %}
+        {% if obj.saled %}
+            <p class="saled"><i class="ab ab-happy"></i><br />{{ _('Продано на AvtoBazar') }}</p>
+        {% endif %}
+        </div>
+        <div class="photo-video-count">
+        {% if obj.photo_count %}
+            <i class="fa fa-camera"></i>{{ obj.photo_count }}
+        {% endif %}
+        {% if obj.video_count > 0 %}
+            <i class="fa fa-video-camera"></i>{{ obj.video_count }}
+        {% endif %}
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 price-favorite-time">
+        <div class="price">
+        {% block item_price %}
+            {% include 'advert/search/item_base/price.html' %}
+        {% endblock %}
+        </div>
+        {% block item_save_compare %}
+        <div class="favorite">
+            <a class="favorite-view btn btn-xs btn-link" data-favorite-id="{{obj.pk}}" href="javascript:void(0)">
+                <i class="ab ab-heart"></i> {{ _('сохранить') }}
+            </a>
+            <a class="compare-view btn btn-xs btn-link"
+                data-compare-id="{{obj.pk}}" data-compare-title="{{ obj.generate_title }}" href="javascript:void(0)">
+                <i class="glyphicon glyphicon-transfer"></i> {{ _('сравнить') }}
+            </a>
+        </div>
+        {% endblock %}
+        {% block item_avtosalon %}
+        {% endblock %}
+    </div>
+	<div class="row">
+	  <div class="col-xs-8 breadcrumbs">
+	  {% block item-breadcrumbs %}
+	  {% endblock %}
+	  </div>
+	  <div class="col-xs-4 time text-right">{% block item_time %}{{obj.date_last_modify}}{% endblock %}</div>
+	</div>
+</div>
