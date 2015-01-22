@@ -1,9 +1,10 @@
 #encoding: utf-8
-from datetime import datetime
+from datetime import datetime, date, timedelta
+import time
 from jinja2 import Markup
 from django import template
 from django_jinja import library
-from django.utils.translation import get_language
+from django.utils.translation import get_language, ugettext_lazy as _
 from django.template.loader import render_to_string
 from django.conf import settings as django_settings
 
@@ -86,3 +87,40 @@ def plugin(path):
 @register.simple_tag
 def now(_format):
     return datetime.now().strftime(_format)
+
+def human_time(d):
+    mon = [_(u'января'), _(u'февраля'), _(u'марта'), _(u'апреля'), _(u'мая'), _(u'июня'),
+           _(u'июля'), _(u'августа'), _(u'сентября'), _(u'октября'), _(u'ноября'), _(u'декабря'),]
+    n = datetime.now()         # Текущее время
+    deltas = time.mktime(n.timetuple()) - time.mktime(d.timetuple())   # Дельта в секундах
+    delta = deltas / 60                 # Дельта в минутах
+    if deltas < 1:
+        deltas = 1
+    if deltas < 60:                     # Секунды
+        return _(u"%d сек. назад") % deltas
+    elif delta < 60:                    # Минуты
+        return _(u"%d мин. назад") % delta
+    elif delta < (n.hour * 60 + n.minute):
+        shour = round(delta/60)
+        if shour in (1,21):
+            shours = _(u"час")
+        elif shour in (2,3,4,22,23,24):
+            shours = _(u"часа")
+        else:
+            shours = _(u"часов")
+        return _(u"%(hour)d %(hours)s назад") % {'hour': shour, 'hours': shours}
+    elif delta < (n.hour * 60 + n.minute + 60 * 24):
+        return _(u"вчера, %(hour)02d:%(minute)02d") % {'hour': d.hour, 'minute': d.minute}
+    elif d.year == n.year:
+        return _(u"%(day)d %(month)s") % {'day': d.day, 'month': mon[d.month - 1]}
+    else:
+        return _(u"%(day)d %(month)s %(year)d") % {'day':d.day, 'month': mon[d.month - 1],'year': d.year}
+
+@register.filter
+@library.filter
+def human_time_from_string(time_string, _format='%Y-%m-%d %H:%M:%S'):
+    try:
+        obj = datetime.strptime(time_string, _format)
+        return human_time(obj)
+    except Exception, e:
+        return str(time_string)
