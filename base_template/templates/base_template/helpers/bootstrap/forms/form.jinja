@@ -8,7 +8,7 @@
 {#    {% endfor %}#}
 {#{% endfor %}#}
 
-{% from "bootstrap/forms/macros.html" import field %}
+{% from "base_template/helpers/bootstrap/forms/macros.jinja" import field %}
 
 {% for field in form %}
     {{ field(field)  }}
