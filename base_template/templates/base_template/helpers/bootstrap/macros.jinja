@@ -33,7 +33,7 @@
 {%- macro debugmin(force_min=False) -%}{% if not DEBUG or force_min %}.min{% endif %}{%- endmacro -%}
 
 {% macro carousel(carousel_images,carousel_id='myCarousel',carousel_width='',carousel_height='') %}
-	<div id="{{ carousel_id }}" class="carousel slide container" 
+	<div id="{{ carousel_id }}" class="carousel slide"
 		{% if carousel_width or carousel_height %}style="{% if carousel_width %} width: {{ carousel_width }}; {% endif %} 
 		{% if carousel_height %} height: {{ carousel_height }} {% endif %}"{% endif %}>
 		<ol class="carousel-indicators">
