@@ -1,0 +1,142 @@
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+  box-shadow: @shadow;
+}
+
+@main_red: #dc534b;
+@main_green: #56ba57;
+@main_font_color: #2e3137;
+body {
+  background-color: #fff;
+  font-family: Open Sans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  color: @main_font_color;
+  h1 {
+    font-size:1.6em;
+    color:@main_red;
+  }
+  img.mail-logo {
+    width: 80%;
+    margin-top: -2px;
+  }
+  .navbar-ab {
+    border: 0;
+    .navbar-brand {
+      background: url(../img/logo.png) no-repeat center left;
+      background-size:50px;
+      background-position: 20px 0px;
+      padding-left: 75px;
+      font-size: 30px;
+      font-weight: 600;
+    }
+    ul.main-dropdown-menu{
+      width:325px;
+      padding:10px;
+      li {
+        float:left;
+        width: 100px;
+        text-align: center;
+        padding: 20px 0;
+        &:hover {
+          background-color: #efefef;
+        }
+        &.divider {
+          width:100%;
+          padding: 0;
+        }
+        i {
+          font-size:2em;
+          width:100%;
+          position:relative;
+          display: block;
+          color: @main_red;
+        }
+        a {
+          padding:0px;
+          &:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+  .left-sidebar {
+    ul {
+      position: fixed;
+      li {
+          border-left: 2px solid #fff;
+        &:hover {
+          border-left: 2px solid #dc534b;
+        }
+        &.divider {
+          height: 1px;
+          margin: 9px 0;
+          overflow: hidden;
+          background-color: #e5e5e5;
+        }
+      }
+      .active-item {
+        border-left: none;
+        &:hover {
+          border-left: none;
+        }
+        display: none;
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        width: 100%;
+        line-height: 60px;
+        background: #fff;
+        border-bottom: 1px solid #e7e7e7;
+        h2 {
+          float: left;
+          font-size: 1.4em;
+          padding: 0px 30px;
+          margin: 0;
+          line-height: 60px;
+          color: lighten(@main_green, 5%);
+        }
+        &.active {
+          display: block;
+          & + li {
+            margin-top: 60px;
+          }
+        }
+        ul {
+          position: relative;
+          li {
+            border-left: none;
+            a {
+              padding: 15px;
+            }
+            &:hover {
+              border-left: none;
+              a {
+                text-decoration: none;
+                border-bottom: @main_green solid 2px;
+                background: lighten(@main_green, 40%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .content-wrapper {
+    padding-top:50px;
+    .page-content {
+      padding-top: 20px;
+      &.active-page {
+        padding-top: 60px;
+      }
+      .content-container {
+        min-height: 900px;
+        padding-top:10px;
+        .box-shadow;
+        background: #f6f6f6;
+      }
+    }
+  }
+}

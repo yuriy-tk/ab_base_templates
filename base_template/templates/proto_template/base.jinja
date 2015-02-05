@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="{{ language() }}>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block site_title %}{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{{ _("Автобазар") }}{% endblock %}"/>
+    <meta name="keywords" content="{% block meta_keywords %}{{ _("Автобазар") }}{% endblock %}"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,500,500italic,600,600italic,700,700italic%7CRaleway:400,400italic,500,500italic,600,600italic,700,700italic">
+
+    <link rel="stylesheet" href="{{ static('proto/css/proto.css') }}">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+
+
+<div id="content-wrapper" class="container-fluid content-wrapper">
+    <div class="row">
+        <!--Content and right sidebar-->
+        <div id="id_page_content" class="col-lg-10 col-md-12 col-lg-push-2 page-content active-page">
+            <div class="row">
+                <div id="id_content_container" class="content-container col-sm-12 col-md-9 col-lg-10">
+                    {% block content %}
+                    <h1>Новости и акции</h1>
+                    {% endblock %}
+                </div>
+
+                <div id="id_right_sidebar" class="col-lg-2 right-sidebar visible-lg">
+                    {% block right_column %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <!--SIDEBAR-->
+        <div id="id_left_sidebar" class="col-md-3 col-lg-2 col-lg-pull-10 left-sidebar">
+            {% block left_column %}
+            <nav class="hidden-print hidden-xs hidden-sm">
+                <ul class="nav col-md-3 col-lg-2">
+                    <li class="active-item active">
+                        <h2 class="col-lg-2 col-md-3">Главная</h2>
+                        <ul class="list list-inline">
+                            <li><a href="#">Продать авто</a></li>
+                            <li><a href="#">Полезное</a></li>
+                            <li><a href="#">Автосалоны</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#glyphicons">Легковые</a>
+                    </li>
+                    <li>
+                        <a href="#dropdowns">Автобусы</a>
+                    </li>
+                    <li>
+                        <a href="#btn-groups">Грузовые</a>
+                    </li>
+                    <li>
+                        <a href="#btn-dropdowns">Мото</a>
+                    </li>
+                    <li>
+                        <a href="#input-groups">Спецтехника</a>
+                    </li>
+                    <li>
+                        <a href="#nav">Прицепы</a>
+                    </li>
+                    <li>
+                        <a href="#navbar">Водный</a>
+                    </li>
+                    <li><a href="#breadcrumbs">Запчасти</a></li>
+                    <li>
+                        <a href="#pagination">Разное</a>
+                    </li>
+                    <li><a href="#labels">Куплю</a></li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#thumbnails">Мои подписки</a>
+                    </li>
+                </ul>
+            </nav>
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+
+<nav class="navbar navbar-default navbar-ab navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#full-bar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <!--<img class="mail-logo" src="http://img.s3.ua/ab/img/common/logo/ab_logo_grey.png?v-1-3-31" alt="AvtoBazar.ua"/>-->
+                    AvtoBazar.ua
+                </a>
+            </div>
+        </div>
+
+        <div class="collapse navbar-collapse" id="full-bar">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Главная <span class="sr-only">(current)</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Диллеры <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Найти дилера</a></li>
+                        <li><a href="#">Как стать дилером?</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Помощь</a></li>
+            </ul>
+            <form class="navbar-form navbar-right visible-lg" role="search">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Найти...">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                          </span>
+                    </div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" title="Добавить объявление" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-plus"></i></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Мой Автобазар <span class="caret"></span></a>
+                    <ul class="dropdown-menu main-dropdown-menu" role="menu">
+                        <li><a href="#"><i class="fa fa-user"></i> Профиль</a></li>
+                        <li><a href="#"><i class="fa fa-archive"></i> Объявления</a></li>
+                        <li><a href="#"><i class="fa fa-star"></i> Избранное</a></li>
+                        <li><a href="#"><i class="fa fa-comments"></i> Сообщения</a></li>
+                        <li><a href="#"><i class="fa fa-area-chart"></i> Статистика</a></li>
+                        <li><a href="#"><i class="fa fa-credit-card"></i> Оплаты</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Еще</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+</nav>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+</body>
+</html>
