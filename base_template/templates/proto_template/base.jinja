@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,500,500italic,600,600italic,700,700italic%7CRaleway:400,400italic,500,500italic,600,600italic,700,700italic">
-
+    {% block stylesheets %}
     <link rel="stylesheet" href="{{ static('proto/css/proto.css') }}">
-
+    {% endblock %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,7 +40,7 @@
                 </div>
 
                 <div id="id_right_sidebar" class="col-lg-2 right-sidebar visible-lg">
-                    {% block right_column %}
+                    {% block right_column_super %}
                     {% endblock %}
                 </div>
             </div>
@@ -48,7 +48,7 @@
 
         <!--SIDEBAR-->
         <div id="id_left_sidebar" class="col-md-3 col-lg-2 col-lg-pull-10 left-sidebar">
-            {% block left_column %}
+            {% block left_column_super %}
             <nav class="hidden-print hidden-xs hidden-sm">
                 <ul class="nav col-md-3 col-lg-2">
                     <li class="active-item active">
@@ -162,6 +162,7 @@
     </div>
 </nav>
 
+{% block bottom_js %}
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
@@ -171,5 +172,6 @@
         $('[data-toggle="tooltip"]').tooltip();
     });
 </script>
+{% endblock %}
 </body>
 </html>
