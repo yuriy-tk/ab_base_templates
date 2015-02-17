@@ -39,6 +39,23 @@
       </div>
       <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-2 hidden-xs add-advert-btn-cont">
         {% block add_advert_button %}
+            <div class="btn-group btn-block add-advert-btn-group">
+                    <button id="id_btn_addAdvert" type="button" class="btn btn-danger btn-block btn-lg dropdown-toggle" data-toggle="dropdown">{{ _('Продать авто') }} <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a id="id_avto_part" href="/add/car/"><i class="ab ab ab-avto"></i> {{ _('Легковые') }}</a></li>
+                        <li><a id="id_bus_part" href="/add/bus/"><i class="ab ab-avtobus"></i> {{ _('Автобусы') }}</a></li>
+                        <li><a id="id_gruz_part" href="/add/truck/"><i class="ab ab-gruzovye"></i> {{ _('Грузовые') }}</a></li>
+                        <li><a id="id_moto_part" href="/add/moto/"><i class="ab ab-moto"></i> {{ _('Мототехника') }}</a></li>
+                        <li><a id="id_technics_part" href="/add/technics/"><i class="ab ab-technics"></i> {{ _('Спецтехника') }}</a></li>
+                        <li><a id="id_trailer_part" href="/add/trailer/"><i class="ab ab-trailer"></i> {{ _('Прицепы') }}</a></li>
+                        <li><a id="id_water_part" href="/add/water/"><i class="ab ab-water"></i> {{ _('Водный транспорт') }}</a></li>
+                        <li><a id="id_avia_part" href="/add/avia/"><i class="ab ab-avia"></i> {{ _('Авиа транспорт') }}</a></li>
+                        <li class="divider"></li>
+                        <li><a id="id_spares_part" href="/zapchasti/prodazha/"><i class="ab ab-spares"></i> {{ _('Запчасти') }}</a></li>
+                        <li><a id="id_file_part" href="/prodazha/raznoe/"><i class="ab ab-file"></i>{{ _('Разное') }}</a></li>
+                        <li><a id="id_buy_part" href="/prodazha/buy/"><i class="ab ab-buy"></i>{{ _('Куплю') }}</a></li>
+                    </ul>
+                </div>
         {% endblock %}
       </div>
     </div>
