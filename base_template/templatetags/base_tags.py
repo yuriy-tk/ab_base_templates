@@ -1,11 +1,14 @@
 #encoding: utf-8
 import time
+import requests
+
 from datetime import datetime
 from jinja2 import Markup
 from django_jinja import library
 from django.utils.translation import get_language, ugettext_lazy as _
 from django.template.loader import render_to_string
 from django.conf import settings as django_settings
+from django.core.cache import cache
 
 from base_template import settings
 
@@ -121,3 +124,12 @@ def price_format(price):
     d = len(p) % 3
     l = [p[i:i+3] for i in xrange(d, len(p), 3)]
     return p[:d] + ' ' + ' '.join(l)
+
+@library.global_function
+def currency_json():
+    currency_json = cache.get('currency_json')
+    if not currency_json:
+        response = requests.get('/api/v1/currency/?format=json')
+        currency_json = response.json()
+        cache.set('currency_json', currency_json, 60*60*12)
+    return currency_json

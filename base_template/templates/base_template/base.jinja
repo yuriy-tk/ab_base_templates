@@ -72,6 +72,28 @@
             <script src="{{ javascript(locale_data_path) }}"></script>
         {% endwith %}
         <script src="{{ javascript('js/apps/ab.js') }}"></script>
+        <script async src="{% javascript 'js/beta.js' %}"></script>
+        <script>
+        avtobazar.Data.locale = '{{ locale() }}';
+        avtobazar.Data.UserFavorites = new avtobazar.Collection.Favorites();
+        avtobazar.Data.Currencies = new avtobazar.Collection.Currencies(JSON.parse('{{ currency_json() }}')['objects']);
+        avtobazar.site_version = 2;
+        {% if request.user.is_authenticated %}
+            avtobazar.Data.User = new avtobazar.Model.User({id: '{{request.user.id}}', is_authenticated: true, username: '{{request.user.username}}'});
+            avtobazar.Data.UserFavorites.fetch();
+        {% else %}
+            avtobazar.Data.User = new avtobazar.Model.User();
+            avtobazar.Data.FavoritesCookieKey = 'user_favorites';
+            if ( $.cookie(avtobazar.Data.FavoritesCookieKey) === undefined) {
+                $.cookie(avtobazar.Data.FavoritesCookieKey, '')
+            }
+            _.each($.cookie(avtobazar.Data.FavoritesCookieKey).split('|'), function(model) {
+              if (model !== '' && model !== undefined) {
+                  avtobazar.Data.UserFavorites.add(new avtobazar.Model.Favorite({object_id: parseInt(model, 10), cookie_based: true}));
+              }
+            });
+        {% endif %}
+     </script>
     {% endblock %}
   </body>
 </html>
