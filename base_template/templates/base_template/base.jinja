@@ -72,7 +72,7 @@
             <script src="{{ javascript(locale_data_path) }}"></script>
         {% endwith %}
         <script src="{{ javascript('js/apps/ab.js') }}"></script>
-        <script async src="{% javascript 'js/beta.js' %}"></script>
+        <script async src="{{ javascript('js/beta.js') }}"></script>
         <script>
         avtobazar.Data.locale = '{{ locale() }}';
         avtobazar.Data.UserFavorites = new avtobazar.Collection.Favorites();
