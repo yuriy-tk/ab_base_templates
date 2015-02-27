@@ -40,6 +40,7 @@ def locale():
         return ''
     return '/%s' % _language
 
+
 @library.global_function
 def language():
     return get_language()
@@ -58,6 +59,7 @@ def image(path):
 def static_image(path):
     return do_media(settings.STATIC_URL_IMG, path)
 
+
 @library.global_function
 def stylesheet(path):
     return do_media(settings.STATIC_URL_CSS, path)
@@ -72,9 +74,11 @@ def javascript(path):
 def plugin(path):
     return do_media(settings.BASE_STATIC_URL, path)
 
+
 @library.global_function
 def now(_format):
     return datetime.now().strftime(_format)
+
 
 def human_time(d):
     mon = [_(u'января'), _(u'февраля'), _(u'марта'), _(u'апреля'), _(u'мая'), _(u'июня'),
@@ -104,6 +108,7 @@ def human_time(d):
     else:
         return _(u"%(day)d %(month)s %(year)d") % {'day':d.day, 'month': mon[d.month - 1],'year': d.year}
 
+
 @library.filter
 def human_time_from_string(time_string, _format='%Y-%m-%d %H:%M:%S'):
     try:
@@ -111,6 +116,7 @@ def human_time_from_string(time_string, _format='%Y-%m-%d %H:%M:%S'):
         return human_time(obj)
     except Exception, e:
         return str(time_string)
+
 
 @library.filter
 def price_format(price):
@@ -125,6 +131,7 @@ def price_format(price):
     l = [p[i:i+3] for i in xrange(d, len(p), 3)]
     return p[:d] + ' ' + ' '.join(l)
 
+
 @library.global_function
 def currency_json():
     currency_json = cache.get('currency_json')
@@ -133,3 +140,8 @@ def currency_json():
         currency_json = response.json()
         cache.set('currency_json', currency_json, 60*60*12)
     return currency_json
+
+
+@library.global_function
+def get_url_for_pattern(pattern, data):
+    return pattern % data
