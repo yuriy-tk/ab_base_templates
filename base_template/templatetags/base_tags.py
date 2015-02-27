@@ -1,4 +1,5 @@
 #encoding: utf-8
+import json
 import time
 import requests
 
@@ -138,8 +139,8 @@ def currency_json():
     if not currency_json:
         response = requests.get('http://avtobazar.ua/api/v1/currency/?format=json')
         currency_json = response.json()
-        cache.set('currency_json', currency_json, 60*60*12)
-    return currency_json
+        cache.set('currency_json', currency_json, 60*60*3)
+    return Markup(json.dumps(currency_json['objects']))
 
 
 @library.global_function
