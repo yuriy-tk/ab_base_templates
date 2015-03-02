@@ -2,7 +2,8 @@
 import json
 import time
 import requests
-
+import urllib2
+from lxml import etree
 from datetime import datetime
 from jinja2 import Markup
 from django_jinja import library
@@ -146,3 +147,29 @@ def currency_json():
 @library.global_function
 def get_url_for_pattern(pattern, data):
     return pattern % data
+
+@library.global_function
+def render_spares_catalog_link(make, make_translit):
+    common = u'/zapchasti/catalog/'
+    if make and make_translit:
+        cache_key = 'zapchasti-link-{0}-{1}'.format(make, make_translit)
+        if cache.get(cache_key):
+            return cache.get(cache_key)
+        try:
+            xml_data = urllib2.urlopen(
+                'http://avtobazar.ua/zapchasti/catalog/get_ab_mark.php?markid=%s' % make,
+                timeout=1).read()
+        except IOError:
+            pass
+        else:
+            try:
+                xml = etree.XML(xml_data)
+            except (ValueError, etree.XMLSyntaxError):
+                pass
+            else:
+                make_id = xml.find('id').text
+                if make_translit and not make_id == 'None':
+                    result = u'/zapchasti/catalog/%s-%s/' % (make_translit, make_id)
+                    cache.set(cache_key, result, 60*60)
+                    return result
+    return common
