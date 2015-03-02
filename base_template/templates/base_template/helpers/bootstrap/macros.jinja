@@ -56,8 +56,12 @@
 		    </div>
 	    {% endfor %}
 	  </div>
-	  <a class="left carousel-control" href="#{{ carousel_id }}" data-slide="prev">&lsaquo;</a>
-	  <a class="right carousel-control" href="#{{ carousel_id }}" data-slide="next">&rsaquo;</a>
+	  <a class="left carousel-control" href="#{{ carousel_id }}" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      </a>
+	  <a class="right carousel-control" href="#{{ carousel_id }}" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </a>
 	</div>
 {% endmacro %}
 
