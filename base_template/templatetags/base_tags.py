@@ -175,8 +175,8 @@ def render_spares_catalog_link(make, make_translit):
     return common
 
 
-@library.filter
-def price_by_currency(price, currency):
+
+def get_currency_rate(currency):
     from classifier.models import Classifier
     cache_key = 'currency:rate:%s' % currency
     if cache.get(cache_key):
@@ -184,6 +184,12 @@ def price_by_currency(price, currency):
     else:
         rate = Classifier.objects.get(translit=currency).rate
         cache.set(cache_key, rate, 60*60*24)
+    return rate
+
+
+@library.filter
+def price_by_currency(price, currency):
+    rate = get_currency_rate(currency)
     try:
         return int(round(float(price)/rate))
     except:
@@ -193,3 +199,9 @@ def price_by_currency(price, currency):
 @library.filter
 def price_currency(price, currency):
     return price_by_currency(price, currency)
+
+
+@library.filter
+def price_to_usd(price, currency):
+    rate = get_currency_rate(currency)
+    return int(round(float(price)*rate))
