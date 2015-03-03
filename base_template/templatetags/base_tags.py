@@ -173,3 +173,23 @@ def render_spares_catalog_link(make, make_translit):
                     cache.set(cache_key, result, 60*60)
                     return result
     return common
+
+
+@library.filter
+def price_by_currency(price, currency):
+    from classifier.models import Classifier
+    cache_key = 'currency:rate:%s' % currency
+    if cache.get(cache_key):
+        rate = cache.get(cache_key)
+    else:
+        rate = Classifier.objects.get(translit=currency).rate
+        cache.set(cache_key, rate, 60*60*24)
+    try:
+        return int(round(float(price)/rate))
+    except:
+        return 0
+
+
+@library.filter
+def price_currency(price, currency):
+    return price_by_currency(price, currency)
