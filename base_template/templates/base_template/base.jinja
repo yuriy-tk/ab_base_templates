@@ -78,7 +78,7 @@
         avtobazar.Data.UserFavorites = new avtobazar.Collection.Favorites();
         avtobazar.Data.Currencies = new avtobazar.Collection.Currencies({{ currency_json() }});
         avtobazar.site_version = 2;
-        {% if request.user.is_authenticated %}
+        {% if request.user.is_authenticated() %}
             avtobazar.Data.User = new avtobazar.Model.User({id: '{{request.user.id}}', is_authenticated: true, username: '{{request.user.username}}'});
             avtobazar.Data.UserFavorites.fetch();
         {% else %}
