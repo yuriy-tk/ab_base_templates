@@ -21,6 +21,33 @@
     <![endif]-->
   </head>
   <body>
+    <div class="head-menu-wrap">
+        <div class="container head-menu">
+          <div class="navbar-header row">
+            <ul class="nav navbar-nav visible-md visible-lg">
+                <li><a href="{{ get_host() }}{{ locale() }}/"><i class="ab ab-home"></i></a></li>
+                <li><a id="to_autocentre_link" class="outer_link" href="http://www.autocentre.ua/">Autocentre.ua</a></li>
+                <li><a id="to_testdrive_link" class="outer_link" href="http://www.autocentre.ua/test-drives/test-drive/">{{ _('Тест-драйвы') }}</a></li>
+                <li><a href="{{ locale() }}/help/main/">{{ _("Помощь") }}</a></li>
+                <li><!--noindex--><a class="onlinehelp" href="https://siteheart.com/webconsultation/684708?byhref=1" onclick="o=window.open;o('https://siteheart.com/webconsultation/684708', 'siteheart_sitewindow_11877', 'width=550,height=400,top=30,left=30,resizable=yes'); return false;" target="siteheart_sitewindow_11877" rel="nofollow">{{ _("Поддержка он-лайн") }}</a><!--/noindex--></li>
+                <li class="dropdown">
+                   <a href="javascript:void(0)"  class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-phone-alt"></i> <span class="caret"></span>
+                   </a>
+                      <ul class="dropdown-menu phones" role="menu">
+                        <li><a><small>(044)</small> 206-56-06</a></li>
+                        <li><a><small>(093)</small> 170-00-10</a></li>
+                        <li><a><small>(067)</small> 236-54-48</a></li>
+                      </ul>
+                </li>
+            </ul>
+            <div class="btn btn-warning" id="old_site">{{ _('На старый сайт') }}</div>
+            <div class="btn-group user pull-right">{# look  to static/dev/src/coffee/apps/ab_generic/views...#}</div>
+            <div class="btn-group language pull-right hidden-xs">{{ locale_switcher(request) }}</div>
+          </div>
+        </div>
+    </div>
+  <div class="container wrapper">
     {% block header %}
        {% include 'base_template/common/header.jinja' %}
     {% endblock %}
@@ -60,6 +87,7 @@
             {% block seo_bottom %}{% endblock %}
         {% endblock %}
     </div>
+  </div>
     <div class="container-fluid footer">
         <div class="container">
           {% include 'base_template/common/footer.jinja' %}
