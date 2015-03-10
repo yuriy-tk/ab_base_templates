@@ -208,7 +208,7 @@ def price_to_usd(price, currency):
 
 @library.global_function
 def adverts_count_all(period='index'):
-    mongodb = settings.MONGODB
+    mongodb = django_settings.MONGODB
     count = None
     if mongodb:
         count = mongodb.adverts_count.find_one({'type': 'all'})
