@@ -205,3 +205,21 @@ def price_currency(price, currency):
 def price_to_usd(price, currency):
     rate = get_currency_rate(currency)
     return int(round(float(price)*rate))
+
+@library.global_function
+def adverts_count_all(period='index'):
+    mongodb = settings.MONGODB
+    count = None
+    if mongodb:
+        count = mongodb.adverts_count.find_one({'type': 'all'})
+    context = {'period': period, 'count': count, 'mongodb': bool(mongodb)}
+    if count is None:
+        context['count'] = {
+            'total': None,
+            'hour': None,
+            'day': None,
+            'index': None,
+        }
+    elif period != 'index':
+        context['count_period'] = count[period]
+    return Markup(render_to_string('base_template/common/adverts_count_all.jinja', context))
