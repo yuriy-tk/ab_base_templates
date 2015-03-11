@@ -1,0 +1,619 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-11 13:18+0000\n"
+"PO-Revision-Date: 2015-03-11 13:30+0000\n"
+"Last-Translator: v  <24site@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Translated-Using: django-rosetta 0.7.5\n"
+
+#: templates/base_template/advert/list/base_list_item.jinja:4
+#| msgid "Акционное предложение"
+msgid "Выгодное предложение"
+msgstr "Вигідна пропозиція"
+
+#: templates/base_template/advert/list/base_list_item.jinja:39
+msgid "Продано на AvtoBazar"
+msgstr "Продано на AvtoBazar"
+
+#: templates/base_template/advert/list/base_list_item.jinja:60
+msgid "сохранить"
+msgstr "зберігти"
+
+#: templates/base_template/advert/list/base_list_item.jinja:64
+msgid "сравнить"
+msgstr "порівняти"
+
+#: templates/base_template/base.jinja:11 templates/base_template/base.jinja:12
+#: templates/proto_template/base.jinja:8 templates/proto_template/base.jinja:9
+#| msgid "АвтоБазар"
+msgid "Автобазар"
+msgstr "АвтоБазар"
+
+#: templates/base_template/base.jinja:30
+msgid "Тест-драйвы"
+msgstr "Тест-драйви"
+
+#: templates/base_template/base.jinja:31
+#: templates/base_template/common/main_menu.jinja:69
+msgid "Помощь"
+msgstr "Допомога"
+
+#: templates/base_template/base.jinja:32
+msgid "Поддержка он-лайн"
+msgstr "Підтримка он-лайн"
+
+#: templates/base_template/base.jinja:44
+msgid "На старый сайт"
+msgstr "На старий сайт"
+
+#: templates/base_template/base.jinja:65
+msgid "Форма поиска"
+msgstr "Форма пошуку"
+
+#: templates/base_template/common/adverts_count_all.jinja:5
+#| msgid "объявлений"
+msgid "Объявлений за час:"
+msgstr "Оголошень за годину:"
+
+#: templates/base_template/common/adverts_count_all.jinja:10
+#: templates/base_template/common/adverts_count_all.jinja:58
+#: templates/base_template/common/header.jinja:41
+#: templates/base_template/common/main_menu.jinja:21
+#: templates/base_template/common/main_menu.jinja:41
+msgid "Легковые"
+msgstr "Легкові"
+
+#: templates/base_template/common/adverts_count_all.jinja:15
+#: templates/base_template/common/adverts_count_all.jinja:63
+#: templates/base_template/common/header.jinja:42
+#: templates/base_template/common/main_menu.jinja:22
+#: templates/base_template/common/main_menu.jinja:42
+msgid "Автобусы"
+msgstr "Автобуси"
+
+#: templates/base_template/common/adverts_count_all.jinja:20
+#: templates/base_template/common/adverts_count_all.jinja:68
+#: templates/base_template/common/header.jinja:43
+#: templates/base_template/common/main_menu.jinja:23
+#: templates/base_template/common/main_menu.jinja:43
+msgid "Грузовые"
+msgstr "Вантажні"
+
+#: templates/base_template/common/adverts_count_all.jinja:25
+#: templates/base_template/common/adverts_count_all.jinja:73
+#: templates/base_template/common/header.jinja:44
+#| msgid "Спецтехника"
+msgid "Мототехника"
+msgstr "Мототехніка"
+
+#: templates/base_template/common/adverts_count_all.jinja:30
+#: templates/base_template/common/adverts_count_all.jinja:78
+#: templates/base_template/common/header.jinja:45
+#: templates/base_template/common/main_menu.jinja:25
+#: templates/base_template/common/main_menu.jinja:45
+msgid "Спецтехника"
+msgstr "Спецтехніка"
+
+#: templates/base_template/common/adverts_count_all.jinja:35
+#: templates/base_template/common/adverts_count_all.jinja:83
+#: templates/base_template/common/header.jinja:46
+#: templates/base_template/common/main_menu.jinja:26
+#: templates/base_template/common/main_menu.jinja:46
+msgid "Прицепы"
+msgstr "Причепи"
+
+#: templates/base_template/common/adverts_count_all.jinja:40
+#: templates/base_template/common/adverts_count_all.jinja:88
+#: templates/base_template/common/header.jinja:47
+#| msgid "Мототранспорт"
+msgid "Водный транспорт"
+msgstr "Водний транспорт"
+
+#: templates/base_template/common/adverts_count_all.jinja:45
+#: templates/base_template/common/adverts_count_all.jinja:93
+#: templates/base_template/common/header.jinja:48
+#| msgid "Мототранспорт"
+msgid "Авиа транспорт"
+msgstr "Авіа транспорт"
+
+#: templates/base_template/common/adverts_count_all.jinja:53
+msgid "за сегодня:"
+msgstr "за сьогодні:"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:4
+msgid "Киев"
+msgstr "Київ"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:6
+msgid "Днепропетровск"
+msgstr "Дніпропетровськ"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:7
+msgid "Луганск"
+msgstr "Луганськ"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:8
+msgid "Донецк"
+msgstr "Донецьк"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:9
+msgid "Запорожье"
+msgstr "Запоріжжя"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:10
+msgid "Херсон"
+msgstr "Херсон"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:11
+msgid "Винница"
+msgstr "Вінниця"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:12
+msgid "Крым"
+msgstr "Крим"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:13
+msgid "Кировоград"
+msgstr "Кировоград"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:14
+msgid "Николаев"
+msgstr "Миколаїв"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:15
+msgid "Одесса"
+msgstr "Одеса"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:16
+msgid "Житомир"
+msgstr "Житомир"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:17
+msgid "Хмельницкий"
+msgstr "Хмельницький"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:18
+msgid "Черновцы"
+msgstr "Чернівці"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:19
+msgid "Ивано-Франковск"
+msgstr "Івано-Франківськ"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:20
+msgid "Ужгород"
+msgstr "Ужгород"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:21
+msgid "Львов"
+msgstr "Львів"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:22
+msgid "Тернополь"
+msgstr "Тернопіль"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:23
+msgid "Ровно"
+msgstr "Рівне"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:24
+msgid "Луцк"
+msgstr "Луцьк"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:25
+msgid "Сумы"
+msgstr "Суми"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:26
+msgid "Харьков"
+msgstr "Харьків"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:27
+msgid "Полтава"
+msgstr "Полтава"
+
+#: templates/base_template/common/block_graphical_map_no_js.jinja:28
+msgid "Чернигов"
+msgstr "Чернігів"
+
+#: templates/base_template/common/footer.jinja:5
+#: templates/base_template/common/footer.jinja:27
+#: templates/base_template/common/main_menu.jinja:11
+msgid "АвтоБазар"
+msgstr "АвтоБазар"
+
+#: templates/base_template/common/footer.jinja:9
+#: templates/base_template/common/footer.jinja:10
+msgid "Скачать в"
+msgstr "Скачати в"
+
+#: templates/base_template/common/footer.jinja:14
+#: templates/base_template/common/footer.jinja:15
+#: templates/base_template/common/footer.jinja:16
+#: templates/base_template/common/footer.jinja:17
+#| msgid "АвтоБазар"
+msgid "АвтоБазар на"
+msgstr "АвтоБазар на"
+
+#: templates/base_template/common/footer.jinja:18
+msgid "Автобазар в ВКОНТАКТЕ"
+msgstr "Автобазар в ВКОНТАКТЕ"
+
+#: templates/base_template/common/footer.jinja:26
+msgid "ДИМЕДИАГРУПП"
+msgstr "ДИМЕДІЯГРУП"
+
+#: templates/base_template/common/footer.jinja:27
+msgid "Использование материалов сайта"
+msgstr "Використання матеріалів сайту"
+
+#: templates/base_template/common/footer.jinja:27
+msgid "без письменного разрешения <br />ООО «ДИМЕДИАГРУПП» не допускается."
+msgstr "без письмового дозволу ООО «ДІМЕДІАГРУП» не допускаєтся."
+
+#: templates/base_template/common/footer.jinja:28
+msgid "Служба поддержки:"
+msgstr "Служба підтримки"
+
+#: templates/base_template/common/footer.jinja:33
+msgid "Региональные представительства, <br />пункты приема объявлений"
+msgstr "Регіональне представнитство"
+
+#: templates/base_template/common/footer.jinja:34
+msgid "Купить авто"
+msgstr "Купити авто"
+
+#: templates/base_template/common/footer.jinja:35
+#| msgid "Перейти на сайт дилера"
+msgid "Карта сайта"
+msgstr "Мапа сайту"
+
+#: templates/base_template/common/footer.jinja:36
+msgid "Политика конфиденциальности"
+msgstr "Політика конфиденційності"
+
+#: templates/base_template/common/footer.jinja:39
+#| msgid "Фирмы на АвтоБазаре"
+msgid "Партнеры АвтоБазара"
+msgstr "Партнери АвтоБазару"
+
+#: templates/base_template/common/footer.jinja:41
+msgid "Первый Автомобильный телеканал"
+msgstr "Перший Автомобільний телеканал"
+
+#: templates/base_template/common/footer.jinja:42
+msgid "новые автомобили"
+msgstr "нові автомобілі"
+
+#: templates/base_template/common/footer.jinja:43
+msgid "продажа авто"
+msgstr "продаж авто"
+
+#: templates/base_template/common/footer.jinja:44
+msgid "недвижимость"
+msgstr "нерухомість"
+
+#: templates/base_template/common/footer.jinja:45
+#| msgid "Мототранспорт"
+msgid "продажа авто и транспорта"
+msgstr "продаж авто та транспорта"
+
+#: templates/base_template/common/footer.jinja:46
+#: templates/base_template/common/footer.jinja:47
+msgid "автомобильный журнал"
+msgstr "автомобільний журнал"
+
+#: templates/base_template/common/footer.jinja:48
+msgid "загородная недвижимость"
+msgstr "приміська нерухомість"
+
+#: templates/base_template/common/footer.jinja:53
+#| msgid "Автосалоны на Автобазаре"
+msgid "Подать авто объявление на Автобазаре"
+msgstr "Подати авто оголошення на АвтоБазарі"
+
+#: templates/base_template/common/footer.jinja:53
+#| msgid "Автосалоны на Автобазаре"
+msgid "Подать объявление на Автобазар"
+msgstr "Подати оголошення на АвтоБазарі"
+
+#: templates/base_template/common/footer.jinja:54
+#| msgid "Найдено объявлений"
+msgid "Стоимость размещения объявлений"
+msgstr "Вартість розміщення оголошень"
+
+#: templates/base_template/common/footer.jinja:55
+#| msgid "Найдено объявлений"
+msgid "Условия размещения объявлений"
+msgstr "Умови розміщення оголошень"
+
+#: templates/base_template/common/footer.jinja:56
+#| msgid "Найдено объявлений"
+msgid "Пакетное размещения объявлений"
+msgstr "Пакетне розміщення оголошень"
+
+#: templates/base_template/common/footer.jinja:57
+#| msgid "Фирмы на АвтоБазаре"
+msgid "Реклама на АвтоБазаре"
+msgstr "Реклама на АвтоБазарі"
+
+#: templates/base_template/common/header.jinja:19
+#| msgid "объявлений"
+msgid "объявления"
+msgstr "оголошення"
+
+#: templates/base_template/common/header.jinja:20
+msgid "автотовары"
+msgstr "автотовари"
+
+#: templates/base_template/common/header.jinja:21
+msgid "фирмы"
+msgstr "фірми"
+
+#: templates/base_template/common/header.jinja:22
+msgid "номер запчасти"
+msgstr "номер запчастини"
+
+#: templates/base_template/common/header.jinja:25
+msgid "например карбюратор"
+msgstr "наприклад, карбюратор"
+
+#: templates/base_template/common/header.jinja:39
+msgid "Продать авто"
+msgstr "Продати авто"
+
+#: templates/base_template/common/header.jinja:50
+#: templates/base_template/common/main_menu.jinja:29
+#: templates/base_template/common/main_menu.jinja:49
+msgid "Запчасти"
+msgstr "Запчастини"
+
+#: templates/base_template/common/header.jinja:51
+#: templates/base_template/common/main_menu.jinja:34
+#: templates/base_template/common/main_menu.jinja:51
+msgid "Разное"
+msgstr "Різне"
+
+#: templates/base_template/common/header.jinja:52
+#: templates/base_template/common/main_menu.jinja:31
+#: templates/base_template/common/main_menu.jinja:50
+msgid "Куплю"
+msgstr "Куплю"
+
+#: templates/base_template/common/main_menu.jinja:5
+#| msgid "показано"
+msgid "Показать меню"
+msgstr "Показати меню"
+
+#: templates/base_template/common/main_menu.jinja:19
+msgid "Поиск"
+msgstr "Пошук"
+
+#: templates/base_template/common/main_menu.jinja:24
+#: templates/base_template/common/main_menu.jinja:44
+msgid "Мото"
+msgstr "Мото"
+
+#: templates/base_template/common/main_menu.jinja:27
+#: templates/base_template/common/main_menu.jinja:47
+msgid "Водный"
+msgstr "Водний"
+
+#: templates/base_template/common/main_menu.jinja:28
+#: templates/base_template/common/main_menu.jinja:48
+msgid "Авиа"
+msgstr "Авіа"
+
+#: templates/base_template/common/main_menu.jinja:30
+msgid "Гаражи"
+msgstr "Гаражі"
+
+#: templates/base_template/common/main_menu.jinja:32
+msgid "Услуги"
+msgstr "Послуги"
+
+#: templates/base_template/common/main_menu.jinja:33
+msgid "Работа"
+msgstr "Робота"
+
+#: templates/base_template/common/main_menu.jinja:35
+#| msgid "Оф. дилеры"
+msgid "Фирмы/Дилеры"
+msgstr "Фірми/Дилери"
+
+#: templates/base_template/common/main_menu.jinja:36
+msgid "Товары"
+msgstr "Товари"
+
+#: templates/base_template/common/main_menu.jinja:39
+msgid "Продать"
+msgstr "Продати"
+
+#: templates/base_template/common/main_menu.jinja:52
+msgid "Как продать?"
+msgstr "Як продати?"
+
+#: templates/base_template/common/main_menu.jinja:55
+msgid "Полезное"
+msgstr "Корисне"
+
+#: templates/base_template/common/main_menu.jinja:57
+#| msgid "Тест-драйвы"
+msgid "Тесты и отзывы"
+msgstr "Тести та відгуки"
+
+#: templates/base_template/common/main_menu.jinja:58
+#| msgid "Новости и Акции"
+msgid "Новости"
+msgstr "Новини"
+
+#: templates/base_template/common/main_menu.jinja:59
+msgid "Бортовой журнал"
+msgstr "Боротовий журнал"
+
+#: templates/base_template/common/main_menu.jinja:60
+msgid "Оценка авто"
+msgstr "Оцінка авто"
+
+#: templates/base_template/common/main_menu.jinja:61
+#| msgid "АвтоБазар"
+msgid "АвтоБазар TV"
+msgstr "АвтоБазар TV"
+
+#: templates/base_template/common/main_menu.jinja:62
+msgid "iPhone"
+msgstr "iPhone"
+
+#: templates/base_template/common/main_menu.jinja:63
+msgid "Android"
+msgstr "Android"
+
+#: templates/base_template/common/main_menu.jinja:64
+msgid "Советы"
+msgstr "Поради"
+
+#: templates/base_template/common/main_menu.jinja:65
+msgid "Шинный калькулятор"
+msgstr "Шинний калькулятор"
+
+#: templates/base_template/common/main_menu.jinja:66
+#| msgid "Запчасти на Автобазаре"
+msgid "Диагностика Авто"
+msgstr "Діагностика Авто"
+
+#: templates/base_template/common/main_menu.jinja:67
+#| msgid "Автовыкуп на Автобазаре"
+msgid "Автокредитирование"
+msgstr "Автокредитування"
+
+#: templates/base_template/common/main_menu.jinja:68
+#| msgid "Автосалон"
+msgid "Найти автосалон"
+msgstr "Знайти автосалон"
+
+#: templates/base_template/common/main_menu.jinja:72
+#| msgid "Оф. дилеры"
+msgid "Дилеры"
+msgstr "Дилери"
+
+#: templates/base_template/common/main_menu.jinja:74
+#| msgid "Поиск дилеров"
+msgid "Как стать дилером"
+msgstr "Як стати дилером"
+
+#: templates/base_template/common/main_menu.jinja:75
+msgid "Тарифные планы"
+msgstr "Тарифні плани"
+
+#: templates/base_template/common/main_menu.jinja:80
+#: templates/base_template/common/main_menu.jinja:82
+#| msgid "АвтоБазар"
+msgid "Мой АвтоБазар"
+msgstr "Мій АвтоБазар"
+
+#: templatetags/base_tags.py:86
+msgid "января"
+msgstr "січня"
+
+#: templatetags/base_tags.py:86
+msgid "февраля"
+msgstr "лютого"
+
+#: templatetags/base_tags.py:86
+msgid "марта"
+msgstr "березня"
+
+#: templatetags/base_tags.py:86
+msgid "апреля"
+msgstr "квітня"
+
+#: templatetags/base_tags.py:86
+msgid "мая"
+msgstr "травня"
+
+#: templatetags/base_tags.py:86
+msgid "июня"
+msgstr "червня"
+
+#: templatetags/base_tags.py:87
+msgid "июля"
+msgstr "липня"
+
+#: templatetags/base_tags.py:87
+msgid "августа"
+msgstr "серпня"
+
+#: templatetags/base_tags.py:87
+msgid "сентября"
+msgstr "вересня"
+
+#: templatetags/base_tags.py:87
+msgid "октября"
+msgstr "жовтня"
+
+#: templatetags/base_tags.py:87
+msgid "ноября"
+msgstr "листопада"
+
+#: templatetags/base_tags.py:87
+msgid "декабря"
+msgstr "грудня"
+
+#: templatetags/base_tags.py:94
+#, python-format
+msgid "%d сек. назад"
+msgstr "%d сек. назад"
+
+#: templatetags/base_tags.py:96
+#, python-format
+msgid "%d мин. назад"
+msgstr "%d хв. назад"
+
+#: templatetags/base_tags.py:100
+msgid "час"
+msgstr "година"
+
+#: templatetags/base_tags.py:102
+msgid "часа"
+msgstr "години"
+
+#: templatetags/base_tags.py:104
+msgid "часов"
+msgstr "годин"
+
+#: templatetags/base_tags.py:105
+#, python-format
+msgid "%(hour)d %(hours)s назад"
+msgstr "%(hour)d %(hours)s назад"
+
+#: templatetags/base_tags.py:107
+#, python-format
+msgid "вчера, %(hour)02d:%(minute)02d"
+msgstr "вчора, %(hour)02d:%(minute)02d"
+
+#: templatetags/base_tags.py:109
+#, python-format
+msgid "%(day)d %(month)s"
+msgstr "%(day)d %(month)s"
+
+#: templatetags/base_tags.py:111
+#, python-format
+msgid "%(day)d %(month)s %(year)d"
+msgstr "%(day)d %(month)s %(year)d"
+
+#: templatetags/helpers_tags.py:50
+msgid "%B %e, %Y"
+msgstr "%B %e, %Y"
