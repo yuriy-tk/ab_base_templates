@@ -54,6 +54,7 @@
           </li>
           <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{{ _('Полезное') }}</a>
              <ul class="dropdown-menu">
+                <li><a href="{{ locale() }}/katalog/">{{ _('Каталог фирм') }}</a></li>
                 <li><a href="otzyvy">{{ _('Тесты и отзывы') }}</a></li>
                 <li><a href="{{ locale() }}/newcars/news/">{{ _('Новости') }}</a></li>
                 <li><a href="http://notes.avtobazar.ua/">{{ _('Бортовой журнал') }}</a></li>
@@ -65,7 +66,6 @@
                 <li><a href="{{ locale() }}/shinnyy-calculator/">{{ _('Шинный калькулятор') }}</a></li>
                 <li><a href="{{ locale() }}/katalog/country:ukraine/groups:sto:diagnostika-avto/">{{ _('Диагностика Авто') }}</a></li>
                 <li><a href="{{ locale() }}/katalog/country:ukraine/groups:avtokreditovanie/">{{ _('Автокредитирование') }}</a></li>
-                <li><a href="{{ locale() }}/katalog/">{{ _('Найти автосалон') }}</a></li>
                 <li><a href="{{ locale() }}/help/main/">{{ _('Помощь') }}</a></li>
               </ul>
           </li>
@@ -73,6 +73,14 @@
              <ul class="dropdown-menu">
                 <!--<li><a href="{{ locale() }}/dealer/">{{ _('Как стать дилером') }}</a></li>-->
                 <li><a href="{{ locale() }}/avtosalony/new/">{{ _('Тарифные планы') }}</a></li>
+                <li><a href="{{ locale() }}/avtosalony/"><span class="ab ab-avto"></span>{{ _('Легковые') }}</a></li>
+               <li><a href="{{ locale() }}/motosalony/"><span class="ab ab-moto"></span>{{ _('Мототранпорт') }}</a></li>
+               <li><a href="{{ locale() }}/avtobus/salony/"><span class="ab ab-avtobus"></span>{{ _('Автобусы') }}</a></li>
+                <li><a href="{{ locale() }}/gruzovye/salony/"><span class="ab ab-gruzovye"></span>{{ _('Грузовые') }}</a></li>
+
+                <li><a href="{{ locale() }}/spectehnika/salony/"><span class="ab ab-technics"></span>{{ _('Спецтехника') }}</a></li>
+                <li><a href="{{ locale() }}/pricep/salony/"><span class="ab ab-trailer"></span>{{ _('Прицепы') }}</a></li>
+                <li><a href="{{ locale() }}/vodniy-transport/salony/"><span class="ab ab-water"></span>{{ _('Водный транспорт') }}</a></li>
               </ul>
           </li>
           <li class="moy-avtobazar">
