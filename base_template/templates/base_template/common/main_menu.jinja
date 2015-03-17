@@ -84,7 +84,7 @@
               </ul>
           </li>
           <li class="moy-avtobazar">
-            {% if request.user.is_authenticated %}
+            {% if request.user.is_authenticated() %}
                 <a href="{{ locale() }}/moy-avtobazar/">{{ _('Мой АвтоБазар') }}</a>
             {% else %}
                 <a href="{{ locale() }}/favorites/avto/">{{ _('Мой АвтоБазар') }}</a>
