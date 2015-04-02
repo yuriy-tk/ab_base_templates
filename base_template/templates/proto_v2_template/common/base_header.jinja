@@ -106,9 +106,7 @@
             {% endblock %}
             <ul class="nav navbar-nav navbar-right">
                 {% block header_right_menu_lists_items %}
-                <li>
-                    <div class="btn-group language pull-right hidden-xs">{{ locale_switcher(request) }}</div>
-                </li>
+                <li class="dropdown">{{ locale_switcher(request, template='proto_v2_template/common/locale_switcher.jinja') }}</li>
                 <li>
                     <a href="{{ locale() }}/add/car/" title="{{ _('Добавить объявление') }}"
                        data-toggle="tooltip" data-placement="bottom">
