@@ -105,48 +105,6 @@
 }
 // endof Arrow mixin
 
-// Before mixin
-.before_base(
-  @width: 16px,
-  @height: 12px,
-  @padding-left: 20px,
-  @top: 0,
-  @left: 0,
-  @background-image: url("../img/frontend/sprites_before.png")
-){
-  position: relative;
-  padding-left: @padding-left;
-  .ie_before();
-  &:before, & .before {
-    content: " ";
-    height: @height;
-    width: @width;
-    position: absolute;
-    pointer-events: none;
-    top: @top;
-    left: @left;
-    background-image: @background-image;
-  }
-}
-.before_enlarging(
-  @width: 22px,
-  @height: 22px,
-  @padding-left: 25px,
-  @top: 0,
-  @left: 0,
-  @background-image: url("../img/frontend/sprites_enlarge_hover.png")
-){
-  .before_base(
-    @width,
-    @height,
-    @padding-left,
-    @top,
-    @left,
-    @background-image
-  );
-}
-// endof Before mixin
-
 // Radius mixin
 .radius (@radius){
   -webkit-border-radius: @radius;
@@ -164,20 +122,20 @@
   border-bottom-right-radius: @bottom;
   border-bottom-left-radius: @bottom;
 }
-.radius (@top-left, @top-right, @bottom-right, @bottom-left){
-  -webkit-border-top-left-radius: @top-left;
-  -webkit-border-top-right-radius: @top-right;
-  -webkit-border-bottom-right-radius: @bottom-right;
-  -webkit-border-bottom-left-radius: @bottom-left;
-  -moz-border-radius-topleft: @top-left;
-  -moz-border-radius-topright: @top-right;
-  -moz-border-radius-bottomright: @bottom-right;
-  -moz-border-radius-bottomleft: @bottom-left;
-  border-top-left-radius: @top-left;
-  border-top-right-radius: @top-right;
-  border-bottom-right-radius: @bottom-right;
-  border-bottom-left-radius: @bottom-left;
-}
+//.radius (@top-left, @top-right, @bottom-right, @bottom-left) {
+//  -webkit-border-top-left-radius: @top-left;
+//  -webkit-border-top-right-radius: @top-right;
+//  -webkit-border-bottom-right-radius: @bottom-right;
+//  -webkit-border-bottom-left-radius: @bottom-left;
+//  -moz-border-radius-topleft: @top-left;
+//  -moz-border-radius-topright: @top-right;
+//  -moz-border-radius-bottomright: @bottom-right;
+//  -moz-border-radius-bottomleft: @bottom-left;
+//  border-top-left-radius: @top-left;
+//  border-top-right-radius: @top-right;
+//  border-bottom-right-radius: @bottom-right;
+//  border-bottom-left-radius: @bottom-left;
+//}
 // endof Radius mixin
 
 // Gradient mixin
