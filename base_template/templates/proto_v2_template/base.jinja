@@ -24,87 +24,8 @@
     <![endif]-->
 </head>
 <body>
+{% include 'proto_v2_template/common/header.jinja' %}
 
-
-<div class="navbar navbar-default navbar-ab navbar-fixed-top" role="navigation" id="slide-nav">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <a class="navbar-brand" href="#">AvtoBazar</a>
-        </div>
-        <div id="slidemenu">
-            <ul class="nav navbar-nav">
-                <li class="ab_sidebar_header visible-xs">
-                    <p class="logo">AvtoBazar</p>
-                    <p>2000 объявлений за час</p>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i> Найти <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><i class="fa fa-car"></i> Легковые</a></li>
-                        <li><a href="#"><i class="fa fa-bus"></i> Автобусы</a></li>
-                        <li><a href="#"><i class="fa fa-truck"></i> Грузовые</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#contact"><i class="fa fa-lightbulb-o"></i> Полезное</a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-briefcase"></i> Дилеры <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Найти дилера</a></li>
-                        <li><a href="#">Как стать дилером?</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#contact"><i class="fa fa-support"></i> Помощь</a>
-                </li>
-            </ul>
-
-            <form class="navbar-form navbar-right visible-lg" role="search">
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Найти...">
-                          <span class="input-group-btn">
-                            <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-                          </span>
-                    </div>
-                </div>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" title="Добавить объявление" data-toggle="tooltip" data-placement="bottom">
-                        <span class="visible-xs"><i class="fa fa-plus"></i> Добавить объявление</span>
-                        <span class="hidden-xs"><i class="fa fa-plus"></i></span>
-                    </a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cogs"></i> Мой Автобазар <span class="caret"></span></a>
-                    <ul class="dropdown-menu main-dropdown-menu" role="menu">
-                        <li><a href="#"><i class="fa fa-user"></i> Профиль</a></li>
-                        <li><a href="#"><i class="fa fa-archive"></i> Объявления</a></li>
-                        <li><a href="#"><i class="fa fa-star"></i> Избранное</a></li>
-                        <li><a href="#"><i class="fa fa-comments"></i> Сообщения</a></li>
-                        <li><a href="#"><i class="fa fa-area-chart"></i> Статистика</a></li>
-                        <li><a href="#"><i class="fa fa-credit-card"></i> Оплаты</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Еще</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-</div>
 
 <div id="page-content">
     <div class="container main-page-container">
@@ -130,11 +51,8 @@
 </script>
 <script>
  $(document).ready(function () {
-
-
         //stick in the fixed 100% height behind the navbar but don't wrap it
         $('#slide-nav.navbar .container').append($('<div id="navbar-height-col"></div>'));
-
         // Enter your ids or classes
         var toggler = '.navbar-toggle';
         var pagewrapper = '#page-content';
