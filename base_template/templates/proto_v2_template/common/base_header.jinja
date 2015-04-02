@@ -107,16 +107,21 @@
             <ul class="nav navbar-nav navbar-right">
                 {% block header_right_menu_lists_items %}
                 <li>
+                    <div class="btn-group language pull-right hidden-xs">{{ locale_switcher(request) }}</div>
+                </li>
+                <li>
                     <a href="{{ locale() }}/add/car/" title="{{ _('Добавить объявление') }}"
                        data-toggle="tooltip" data-placement="bottom">
                         <span class="visible-xs"><i class="fa fa-plus"></i> {{ _('Добавить объявление') }}</span>
                         <span class="hidden-xs"><i class="fa fa-plus"></i></span>
                     </a>
                 </li>
+                {% if request.user.is_authenticated() %}
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cogs"></i> {{ _('Мой Автобазар') }} <span class="caret"></span></a>
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cogs"></i> {# { _('Мой Автобазар') }#} {{ request.user.email }} <span class="caret"></span></a>
                     <ul class="dropdown-menu main-dropdown-menu" role="menu">
                         {% block personal_menu_lists_items %}
+
                         <li><a href="{{ locale() }}/personal/profile/"><i class="fa fa-user"></i> {{ _('Профиль') }}</a></li>
                         <li><a href="{{ locale() }}/personal/list/classes/avto/"><i class="fa fa-archive"></i> {{ _('Объявления') }}</a></li>
                         <li><a href="{{ locale() }}/favorites/avto/"><i class="fa fa-star"></i> {{ _('Избранное') }}</a></li>
@@ -128,6 +133,11 @@
                         {% endblock %}
                     </ul>
                 </li>
+                {% else %}
+                <li>
+                 <div class="btn-group user pull-right">{# look  to static/dev/src/coffee/apps/ab_generic/views...#}</div>
+                </li>
+                {% endif %}
                 {% endblock %}
             </ul>
 
