@@ -12,8 +12,8 @@
 
 body {
   background-color: #fff;
-  font-family: Open Sans;
-  font-size: 15px;
+//  font-family: Open Sans;
+//  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   color: @main_font_color;
@@ -57,6 +57,7 @@ body {
     display: block;
     height: 3px;
     margin: 5px 0 0 0;
+    background: #fff;
   }
 }
 
@@ -91,7 +92,7 @@ body {
     }
 
     #slidemenu {
-      //    background: #f7f7f7;
+      background: #fff;
       left: -100%;
       width: 80%;
       min-width: 0;
@@ -108,6 +109,9 @@ body {
         width: 100%;
         margin: 0;
         li {
+          a {
+            color: #333;
+          }
           &:hover {
             background-color: #eeeeee;
             transition: all 450ms ease;
@@ -199,62 +203,99 @@ body {
 .navbar-ab {
   i:not(.fa-search) {
     display: none;
-
   }
+  background-color: #546E7A;
+  .box-shadow();
+  border:0;
+
   .navbar-brand {
     background: url(../img/logo.png) no-repeat center left;
+    color: #fff;
     background-size:30px;
     background-position: 20px 10px;
     padding-left: 55px;
     font-size: 20px;
     font-weight: 600;
-    float:right;
+    &:hover {
+      color: #fff;
+    }
   }
-  ul.main-dropdown-menu{
-    width:325px;
-    padding:10px;
+  ul.navbar-nav {
     li {
-      float:left;
-      width: 100px;
-      text-align: center;
-      padding: 20px 0;
-      &:hover {
-        background-color: #efefef;
-      }
-      &.divider {
-        width:100%;
-        padding: 0;
-      }
-      i {
-        font-size:2em;
-        width:100%;
-        position:relative;
-        display: block;
-        color: @main_red;
-      }
       a {
-        padding:0px;
-        &:hover {
-          background: none;
+        color: #fff;
+      }
+      &.ab_sidebar_header {
+        padding: 20px;
+        p {
+          font-size: 0.8em;
+          &.logo {
+            background: url(../img/logo.png) no-repeat center left;
+            background-size: 30px;
+            padding-left: 35px;
+            font-size: 30px;
+            font-weight: 600;
+            color: #5e5e5e;
+          }
+        }
+        background: #eee;
+        height: 112px;
+        .inner_shadow;
+      }
+
+      ul {
+        &.dropdown-menu {
+          li {
+            a {
+              color: #333;
+            }
+          }
         }
       }
     }
   }
-  li.ab_sidebar_header {
-    padding: 20px;
-    p {
-      font-size: 0.8em;
-      &.logo {
-        background: url(../img/logo.png) no-repeat center left;
-        background-size: 30px;
-        padding-left: 35px;
-        font-size: 30px;
-        font-weight: 600;
-        color: #5e5e5e;
+}
+
+.main-page-container {
+  .box-shadow();
+}
+
+@media (min-width:768px) {
+  .navbar-ab {
+    ul.navbar-nav {
+      ul {
+        &.main-dropdown-menu {
+          width:325px;
+          padding:10px;
+          li {
+            float:left;
+            width: 100px;
+            text-align: center;
+            padding: 20px 0;
+            &:hover {
+              background-color: #efefef;
+            }
+            &.divider {
+              width:100%;
+              padding: 0;
+            }
+            i {
+              font-size:2em;
+              width:100%;
+              position:relative;
+              display: block;
+              color: @main_red;
+            }
+            a {
+              color:#333;
+              padding:0px;
+              &:hover {
+                background: none;
+              }
+            }
+          }
+        }
       }
     }
-    background: #eee;
-    height: 112px;
-    .inner_shadow;
   }
 }
