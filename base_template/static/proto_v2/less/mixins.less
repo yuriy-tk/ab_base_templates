@@ -1,0 +1,223 @@
+@import "variables.less";
+
+.ie_before() {*zoom: ~'expression(this.runtimeStyle.zoom="1", this.insertBefore( document.createElement("small"), this.firstChild ).className="before")';}
+.ie_after() {*zoom: ~'expression(this.runtimeStyle.zoom="1", this.appendChild( document.createElement("small") ).className="after")';}
+.ie_content(@str) {*zoom: ~'expression(this.innerHTML="@{str}")';}
+
+.sprite_bg_after (@left, @top){
+  &:after, & .after {background-position: @left @top;}
+}
+.sprite_bg_after (@left, @top, @lefth, @toph){
+  &:after, & .after {background-position: @left @top;}
+  &:hover {
+    &:after, & .after {background-position: @lefth @toph;}
+  }
+}
+
+// Arrow mixin
+.arrow_base(@size, @margin-top, @top, @left){
+  position: relative;
+  .ie_after();
+  &:after, & .after {
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: @size*0.5;
+    margin-top: @margin-top;
+    top: @top;
+    left: @left;
+  }
+}
+// TOP
+.arrow(
+  @direction,
+  @color: #dedede,
+  @size: 10px,
+  @margin-top: 0px,
+  @top: (-@size),
+  @left: (50% - @size*0.5),
+  @strech: 100%
+) when (@direction = top) {
+  .arrow_base(@size, @margin-top, @top, @left);
+  .arrow_base(@size, @margin-top, @top, @left);
+  &:after, & .after {
+    border-style: inset inset solid inset;
+    border-width: 100% 100% @strech 100%;
+    border-bottom-width: @strech;
+    border-color: transparent transparent @color transparent;
+  }
+}
+// RIGHT
+.arrow(
+  @direction,
+  @color: #dedede,
+  @size: 10px,
+  @margin-top: (-@size*0.5),
+  @top: 50%,
+  @left: 100%,
+  @strech: 100%
+) when (@direction = right) {
+  .arrow_base(@size, @margin-top, @top, @left);
+  &:after, & .after {
+    border-style: inset inset inset solid;
+    border-width: 100% 100% 100% @strech;
+    border-left-width: @strech;
+    border-color: transparent transparent transparent @color;
+  }
+}
+// BOTTOM
+.arrow(
+  @direction,
+  @color: #dedede,
+  @size: 10px,
+  @margin-top: 0px,
+  @top: 100%,
+  @left: (50% - @size*0.5),
+  @strech: 100%
+) when (@direction = bottom) {
+  .arrow_base(@size, @margin-top, @top, @left);
+  &:after, & .after {
+    border-style: solid inset inset inset;
+    border-width: @strech 100% 100% 100%;
+    border-top-width: @strech;
+    border-color: @color transparent transparent transparent;
+  }
+}
+//LEFT
+.arrow(
+  @direction,
+  @color: #dedede,
+  @size: 10px,
+  @margin-top: (-@size*0.5),
+  @top: 50%,
+  @left: (-@size),
+  @strech: 100%
+) when (@direction = left) {
+  .arrow_base(@size, @margin-top, @top, @left);
+  &:after, & .after {
+    border-style: inset solid inset inset;
+    border-width: 100% @strech 100% 100%;
+    border-right-width: @strech;
+    border-color: transparent @color transparent transparent;
+  }
+}
+// endof Arrow mixin
+
+// Before mixin
+.before_base(
+  @width: 16px,
+  @height: 12px,
+  @padding-left: 20px,
+  @top: 0,
+  @left: 0,
+  @background-image: url("../img/frontend/sprites_before.png")
+){
+  position: relative;
+  padding-left: @padding-left;
+  .ie_before();
+  &:before, & .before {
+    content: " ";
+    height: @height;
+    width: @width;
+    position: absolute;
+    pointer-events: none;
+    top: @top;
+    left: @left;
+    background-image: @background-image;
+  }
+}
+.before_enlarging(
+  @width: 22px,
+  @height: 22px,
+  @padding-left: 25px,
+  @top: 0,
+  @left: 0,
+  @background-image: url("../img/frontend/sprites_enlarge_hover.png")
+){
+  .before_base(
+    @width,
+    @height,
+    @padding-left,
+    @top,
+    @left,
+    @background-image
+  );
+}
+// endof Before mixin
+
+// Radius mixin
+.radius (@radius){
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.radius (@top, @bottom){
+  -webkit-border-radius: @top;
+  -webkit-border-bottom-right-radius: @bottom;
+  -webkit-border-bottom-left-radius: @bottom;
+  -moz-border-radius: @top;
+  -moz-border-radius-bottomright: @bottom;
+  -moz-border-radius-bottomleft: @bottom;
+  border-radius: @top;
+  border-bottom-right-radius: @bottom;
+  border-bottom-left-radius: @bottom;
+}
+.radius (@top-left, @top-right, @bottom-right, @bottom-left){
+  -webkit-border-top-left-radius: @top-left;
+  -webkit-border-top-right-radius: @top-right;
+  -webkit-border-bottom-right-radius: @bottom-right;
+  -webkit-border-bottom-left-radius: @bottom-left;
+  -moz-border-radius-topleft: @top-left;
+  -moz-border-radius-topright: @top-right;
+  -moz-border-radius-bottomright: @bottom-right;
+  -moz-border-radius-bottomleft: @bottom-left;
+  border-top-left-radius: @top-left;
+  border-top-right-radius: @top-right;
+  border-bottom-right-radius: @bottom-right;
+  border-bottom-left-radius: @bottom-left;
+}
+// endof Radius mixin
+
+// Gradient mixin
+.base64DataUriBackground (@encode, @type: ~"image/svg+xml") {
+  @dataUriPrefix: ~"url(data:@{type};base64,";
+  @dataUriSuffix: ~")";
+
+  // with btoa()
+  // @b64DataUri: ~`(function(a,b,c){return a+btoa(b)+c})('@{dataUriPrefix}','@{encode}','@{dataUriSuffix}')`;
+
+  // without
+  @b64DataUri: ~`(function(a,b,c){function e(a){a=a.replace(/\r\n/g,'\n');var b='';for(var c=0;c<a.length;c++){var d=a.charCodeAt(c);if(d<128){b+=String.fromCharCode(d)}else if(d>127&&d<2048){b+=String.fromCharCode(d>>6|192);b+=String.fromCharCode(d&63|128)}else{b+=String.fromCharCode(d>>12|224);b+=String.fromCharCode(d>>6&63|128);b+=String.fromCharCode(d&63|128)}}return b}function f(a){var b='';var c,f,g,h,i,j,l;var m=0;a=e(a);while(m<a.length){c=a.charCodeAt(m++);f=a.charCodeAt(m++);g=a.charCodeAt(m++);h=c>>2;i=(c&3)<<4|f>>4;j=(f&15)<<2|g>>6;l=g&63;if(isNaN(f)){j=l=64}else if(isNaN(g)){l=64}b=b+d.charAt(h)+d.charAt(i)+d.charAt(j)+d.charAt(l)}return b}var d='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';return a+f(b)+c})('@{dataUriPrefix}','@{encode}','@{dataUriSuffix}')`;
+
+  background: @b64DataUri;
+}
+
+.gradient_vert (@gradient-top, @gradient-bottom) {
+  @svg: ~'<?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="@{gradient-top}" stop-opacity="1"/><stop offset="100%" stop-color="@{gradient-bottom}" stop-opacity="1"/></linearGradient><rect x="0" y="0" width="1" height="1" fill="url(#grad-ucgg-generated)" /></svg>';
+
+  .base64DataUriBackground(@svg);
+
+  background: -moz-linear-gradient(top, @gradient-top 0%, @gradient-bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@gradient-top), color-stop(100%,@gradient-bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, @gradient-top 0%,@gradient-bottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, @gradient-top 0%,@gradient-bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, @gradient-top 0%,@gradient-bottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom, @gradient-top 0%,@gradient-bottom 100%); /* W3C */
+  filter: ~"progid:DXImageTransform.Microsoft.gradient( startColorstr='@{gradient-top}', endColorstr='@{gradient-bottom}',GradientType=0 )"; /* IE6-8 */
+
+  #isMSIE.ie9 & {filter: none;}
+}
+// endof Gradient mixin
+
+// Opacity mixin
+.opacity (@proc){
+  opacity: @proc;
+  @proc100: (@proc*100);
+  //filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{proc100})";
+  filter: ~"alpha(opacity=@{proc100})";
+  -moz-opacity: @proc;
+}
+// endof Opacity mixin
+

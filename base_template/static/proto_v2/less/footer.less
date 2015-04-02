@@ -1,0 +1,111 @@
+@import "mixins.less";
+
+.supfooter {margin-bottom:10px;}
+.footer {
+  margin-top:25px;
+  padding-top: 25px;
+  border-top: 1px solid #ccc;
+  background-color: #f0f1f1;
+}
+
+.foot_v3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.5pt;
+  padding: 10px;
+  color: #666666;
+  line-height: 1.2em;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  p {
+    margin: 0;
+  }
+  .hdr_h4 {
+    font-weight:bold; color: #000;
+  }
+  a {
+    color: #666;
+    text-decoration: underline;
+    &:hover {
+      color: #999;
+      text-decoration: underline;
+    }
+  }
+  .col {width: 30%; margin-left: 5%; float:left;}
+  .col_first {margin-left: 0;}
+  .sprt {
+    clear: both; height: 1px; font-size: 1px;
+    margin-bottom:10px; padding-top: 10px; border-bottom: 2px solid #ffffff;
+  }
+  .logo {padding-top: 10px;}
+  .store_ru, .store_uk,
+  .play_ru, .play_uk {
+    display: inline-block;
+    width: 114px;
+    height: 38px;
+    text-indent: -9999px;
+    margin-right: 10px;
+  }
+  .play_ru, .store_ru {background-image: url('../img/frontend/main_header/mob_links2_ru.png');}
+  .play_uk, .store_uk {background-image: url('../img/frontend/main_header/mob_links2_uk.png');}
+  .play_ru, .play_uk {background-position: 0px 0px;
+    &:hover {background-position: 0px -50px;}
+  }
+  .store_ru, .store_uk {background-position: -150px 0px;
+    &:hover {background-position: -150px -50px;}
+  }
+  .copytext {margin-bottom: 5px;}
+  .mid_links {margin-bottom: 5px;}
+  .mail {margin-bottom: 5px;}
+  .socials {
+    padding-top: 0px;
+    a {
+      text-decoration: none;
+      font-size: 24px;
+      color: #888;
+      margin: 10px 14px 0px 0px;
+      display: inline-block;
+      .fa-vk {
+        position: relative;
+        top: -4px;
+      }
+      &:hover {
+        color: #666;
+      }
+    }
+  }
+  .partners{
+    .hdr {
+      margin-bottom: 5px;
+      a{
+        color: #666;
+        padding-right: 20px;
+        .arrow(bottom,
+          @color: #999999,
+          @size: 12px,
+          @margin-top: 0px,
+          @top: 38%,
+          @left: auto,
+          @strech: 200%
+        );
+        &:after, & .after {right: 0px;}
+        &:hover {
+          color: #999;
+        }
+      }
+    }
+    ul{
+      display: none;
+      width: 500px;
+      padding: 0;
+      a {
+        color: #666666; text-decoration: underline;
+        &:hover {color: #f00; text-decoration: underline;}
+      }
+      li {display:block; float: left; width: 120px;}
+    }
+  }
+  .bottom-info {
+    line-height: 1.8;
+  }
+}
