@@ -133,7 +133,7 @@
                 </li>
                 {% else %}
                 <li>
-                 <div class="btn-group user pull-right">{# look  to static/dev/src/coffee/apps/ab_generic/views...#}</div>
+                 <a href="{{ locale() }}/auth/login/simple/?next={{ request.path }}" >{{ _('Вход') }}</a>
                 </li>
                 {% endif %}
                 {% endblock %}
