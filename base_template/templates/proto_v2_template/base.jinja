@@ -30,6 +30,13 @@
 {% endblock %}
 
 <div class="container wrapper">
+    {% block top_banner %}
+        <div class="row" style="margin: -10px 0 15px 0;">
+            <div class="col-lg-12">
+            <!--noindex--><div id="ad-top"><div id="a_728x90" class="text-center" style="margin:0 auto;"></div></div><!--/noindex-->
+            </div>
+        </div>
+    {% endblock %}
     <div id="page-content">
         <div class="container main-page-container">
             {% block content %}
