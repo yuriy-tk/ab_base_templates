@@ -207,7 +207,7 @@ def price_to_usd(price, currency):
     return int(round(float(price)*rate))
 
 @library.global_function
-def adverts_count_all(period='index'):
+def adverts_count_all(period='index', template='base_template/common/adverts_count_all.jinja'):
     mongodb = django_settings.MONGODB
     count = None
     if mongodb:
@@ -222,4 +222,4 @@ def adverts_count_all(period='index'):
         }
     elif period != 'index':
         context['count_period'] = count[period]
-    return Markup(render_to_string('base_template/common/adverts_count_all.jinja', context))
+    return Markup(render_to_string(template, context))

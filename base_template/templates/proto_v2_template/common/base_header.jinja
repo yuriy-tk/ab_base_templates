@@ -14,7 +14,7 @@
                 <li class="ab_sidebar_header visible-xs">
                     {% block header_sidebar_well %}
                     <p class="logo">AvtoBazar</p>
-                    <p>2000 объявлений за час</p>
+                    <p>{{ adverts_count_all(template='protp_v2_template/common/adverts_count_all.jinja') }}</p>
                     {% endblock %}
                 </li>
                 {% block header_menu_lists_items %}
