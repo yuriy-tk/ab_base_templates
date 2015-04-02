@@ -12,9 +12,9 @@
   <meta name="description" content="{% block meta_description %}{{ _("Автобазар") }}{% endblock %}"/>
   <meta name="keywords" content="{% block meta_keywords %}{{ _("Автобазар") }}{% endblock %}"/>
   {% block stylesheets %}
-    <link href="{{ stylesheet('css/libs.min.css') }}" rel="stylesheet">
-    <link href="{{ stylesheet('css/bs_theme_common.css') }}" rel="stylesheet">
-      {{ compressed_css('proto_v2') }}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    {{ compressed_css('proto_v2') }}
   {% endblock %}
   {% block ogp %}{% endblock %}
   <!--[if lt IE 9]>
@@ -23,20 +23,24 @@
   <![endif]-->
 </head>
 <body>
+{% block custom_header %}
 {% include 'proto_v2_template/common/header.jinja' %}
+{% endblock %}
 
-
-<div id="page-content">
-    <div class="container main-page-container">
-        {% block content %}
-            <h1>Новости и акции</h1>
-        {% endblock %}
+<div class="container wrapper">
+    <div id="page-content">
+        <div class="container main-page-container">
+            {% block content %}
+                <h1>Новости и акции</h1>
+            {% endblock %}
+        </div>
+    </div>
+    <div class="container-fluid footer">
+        <div class="container">
+          {% include 'base_template/common/footer.jinja' %}
+        </div>
     </div>
 </div>
-
-
-
-
 {% block bottom_js %}
   <script src="{{ javascript('js/libs.js') }}"></script>
   <script src="{{ javascript('js/templates.js') }}"></script>
