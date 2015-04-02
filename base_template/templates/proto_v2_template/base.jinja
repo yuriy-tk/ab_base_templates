@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,500,500italic,600,600italic,700,700italic%7CRaleway:400,400italic,500,500italic,600,600italic,700,700italic">
     {% block stylesheets %}
-    <link rel="stylesheet" href="{{ static('proto_v2/css/proto.css') }}">
+        {{ compressed_css('proto_v2') }}
     {% endblock %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
