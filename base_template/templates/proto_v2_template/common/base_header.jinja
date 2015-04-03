@@ -108,10 +108,9 @@
                 {% block header_right_menu_lists_items %}
                 <li class="dropdown hidden-xs">{{ locale_switcher(request, template='proto_v2_template/common/locale_switcher.jinja') }}</li>
                 <li>
-                    <a href="{{ locale() }}/add/car/" title="{{ _('Добавить объявление') }}"
+                    <a class="add_car_btn" href="{{ locale() }}/add/car/" title="{{ _('Добавить объявление') }}"
                        data-toggle="tooltip" data-placement="bottom">
-                        <span class="visible-xs"><i class="fa fa-plus"></i> {{ _('Добавить объявление') }}</span>
-                        <span class="hidden-xs"><i class="fa fa-plus"></i></span>
+                        <i class="fa fa-plus"></i> <span class="visible-xs">{{ _('Добавить объявление') }}</span>
                     </a>
                 </li>
                 {% if request.user.is_authenticated() %}
@@ -133,7 +132,7 @@
                 </li>
                 {% else %}
                 <li>
-                 <a href="{{ locale() }}/auth/login/simple/?next={{ request.path }}" >{{ _('Вход') }}</a>
+                 <a href="{{ locale() }}/auth/login/simple/?next={{ request.path }}" ><i class="fa fa-sign-in"></i> {{ _('Вход') }}</a>
                 </li>
                 {% endif %}
                 {% endblock %}
