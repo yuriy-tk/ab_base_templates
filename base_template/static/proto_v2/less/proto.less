@@ -227,7 +227,16 @@ body {
   ul.navbar-nav {
     li {
       &.locale_switcher {
-        width:30px;
+        ul{
+          min-width: 40px;
+          li {
+            a {
+              display: block;
+              text-align: center;
+            }
+          }
+        }
+
       }
       a {
         color: #fff;
