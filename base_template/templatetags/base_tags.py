@@ -52,6 +52,13 @@ def do_media(domain, path):
     return '{0}{1}?{2}'.format(domain, path, settings.MEDIA_VERSION)
 
 
+def do_media_inline(domain, path):
+    response = requests.get(do_media(domain, path))
+    if response.status_code == 200:
+        return response.text
+    return ''
+
+
 @library.global_function
 def image(path):
     return do_media(settings.BASE_MEDIA_URL, path)
@@ -65,6 +72,11 @@ def static_image(path):
 @library.global_function
 def stylesheet(path):
     return do_media(settings.STATIC_URL_CSS, path)
+
+
+@library.global_function
+def stylesheet_inline(path):
+    return '<style>%s</style>' % do_media_inline(settings.STATIC_URL_CSS, path)
 
 
 @library.global_function
