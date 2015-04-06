@@ -59,6 +59,10 @@ def do_media_inline(domain, path):
     return ''
 
 
+def do_media_import_line(domain, path):
+    return '@import url("%s");' % do_media(domain, path)
+
+
 @library.global_function
 def image(path):
     return do_media(settings.BASE_MEDIA_URL, path)
@@ -77,6 +81,10 @@ def stylesheet(path):
 @library.global_function
 def stylesheet_inline(path):
     return Markup('<style>%s</style>' % do_media_inline(settings.STATIC_URL_CSS, path))
+
+@library.global_function
+def stylesheet_import(path):
+    return Markup('<style>%s</style>' % do_media_import_line(settings.STATIC_URL_CSS, path))
 
 
 @library.global_function

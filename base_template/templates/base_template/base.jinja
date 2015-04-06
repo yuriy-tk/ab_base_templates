@@ -13,8 +13,8 @@
   {% block stylesheets %}
 {#    <link href="{{ stylesheet('css/libs.min.css') }}" rel="stylesheet">#}
 {#    <link href="{{ stylesheet('css/bs_theme_common.css') }}" rel="stylesheet">#}
-      {{ stylesheet_inline('css/libs.min.css') }}
-      {{ stylesheet_inline('css/bs_theme_common.css') }}
+      {{ stylesheet_import('css/libs.min.css') }}
+      {{ stylesheet_import('css/bs_theme_common.css') }}
   {% endblock %}
   {% block ogp %}{% endblock %}
   <!--[if lt IE 9]>
