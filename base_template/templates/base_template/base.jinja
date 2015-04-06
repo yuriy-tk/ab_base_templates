@@ -10,12 +10,7 @@
   <title>{% block site_title %}{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}{{ _("Автобазар") }}{% endblock %}"/>
   <meta name="keywords" content="{% block meta_keywords %}{{ _("Автобазар") }}{% endblock %}"/>
-  {% block stylesheets %}
-{#    <link href="{{ stylesheet('css/libs.min.css') }}" rel="stylesheet">#}
-{#    <link href="{{ stylesheet('css/bs_theme_common.css') }}" rel="stylesheet">#}
-      {{ stylesheet_import('css/libs.min.css') }}
-      {{ stylesheet_import('css/bs_theme_common.css') }}
-  {% endblock %}
+
   {% block ogp %}{% endblock %}
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -23,7 +18,12 @@
   <![endif]-->
 </head>
 <body>
-
+  {% block stylesheets %}
+{#    <link href="{{ stylesheet('css/libs.min.css') }}" rel="stylesheet">#}
+{#    <link href="{{ stylesheet('css/bs_theme_common.css') }}" rel="stylesheet">#}
+      {{ stylesheet_import('css/libs.min.css') }}
+      {{ stylesheet_import('css/bs_theme_common.css') }}
+  {% endblock %}
 <div class="head-menu-wrap">
   <div class="container head-menu">
     <div class="navbar-header row">
