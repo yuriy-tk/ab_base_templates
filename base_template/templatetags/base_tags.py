@@ -76,7 +76,7 @@ def stylesheet(path):
 
 @library.global_function
 def stylesheet_inline(path):
-    return '<style>%s</style>' % do_media_inline(settings.STATIC_URL_CSS, path)
+    return Markup('<style>%s</style>' % do_media_inline(settings.STATIC_URL_CSS, path))
 
 
 @library.global_function
