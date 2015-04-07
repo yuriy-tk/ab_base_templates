@@ -11,10 +11,8 @@
   <meta name="description" content="{% block meta_description %}{{ _("Автобазар") }}{% endblock %}"/>
   <meta name="keywords" content="{% block meta_keywords %}{{ _("Автобазар") }}{% endblock %}"/>
   {% block stylesheets %}
-{#    <link href="{{ stylesheet('css/libs.min.css') }}" rel="stylesheet">#}
-{#    <link href="{{ stylesheet('css/bs_theme_common.css') }}" rel="stylesheet">#}
-      {{ stylesheet_inline('css/libs.min.css') }}
-      {{ stylesheet_inline('css/bs_theme_common.css') }}
+    {{ stylesheet_inline('css/libs.min.css') }}
+    {{ stylesheet_inline('css/bs_theme_common.css') }}
   {% endblock %}
   {% block ogp %}{% endblock %}
   <!--[if lt IE 9]>
@@ -23,6 +21,7 @@
   <![endif]-->
 </head>
 <body>
+<link href="{{ stylesheet('css/fonts.min.css') }}" rel="stylesheet">
 
 <div class="head-menu-wrap">
   <div class="container head-menu">
