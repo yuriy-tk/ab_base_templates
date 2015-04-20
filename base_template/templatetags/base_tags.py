@@ -246,9 +246,9 @@ def render_alternate_link(request):
     path = request.get_full_path()
     if path[1:3] == current_language:
         path = path[3:]
-    for lang, title in settings.LANGUAGES:
+    for lang, title in django_settings.LANGUAGES:
         if not lang == current_language:
-            if not lang == settings.LANGUAGE_CODE:
+            if not lang == django_settings.LANGUAGE_CODE:
                 path = '/%s%s' % (lang, path)
             html.append(u'<link rel="alternate" hreflang="%s" href="http://avtobazar.ua%s" />' % (lang, path))
     html.append(u'<meta http-equiv="content-Language" content="%s" />' % current_language)

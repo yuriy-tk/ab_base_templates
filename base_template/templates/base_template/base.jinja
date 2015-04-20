@@ -10,6 +10,9 @@
   <title>{% block site_title %}{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}{{ _("Автобазар") }}{% endblock %}"/>
   <meta name="keywords" content="{% block meta_keywords %}{{ _("Автобазар") }}{% endblock %}"/>
+  {% cache 60*60*24 render_seo_rel_li request.get_full_path() request.is_secure language() %}
+     {{ render_alternate_link(request) }}
+  {% endcache %}
   {% block stylesheets %}
     {{ stylesheet_inline('css/libs.min.css') }}
     {{ stylesheet_inline('css/bs_theme_common.css') }}
