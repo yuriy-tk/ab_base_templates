@@ -269,7 +269,7 @@ def render_seo_rel_link(request, pages=0):
                 to_exclude = path.rfind(text)
                 if to_exclude != -1:
                     path = path[:(to_exclude - 1)] + path[(to_exclude + len(text)):]
-    if not request.is_secure():
+    if request.is_secure():
         result.append(u'<link rel="canonicial" href="https://avtobazar.ua%s" >' % path)
     else:
         result.append(u'<link rel="canonicial" href="http://avtobazar.ua%s" >' % path)
