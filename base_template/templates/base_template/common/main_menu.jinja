@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand visible-xs col-xs-8" href="/">
-          <img class="logo" src="{{ static_image('img/frontend/main_header/mainlogo.v2.png') }}" alt="{{ _('АвтоБазар') }}">
+        <img class="logo" src="{{ static_image('img/frontend/main_header/mainlogo.v2.png') }}" alt="{{ _('АвтоБазар') }}">
       </a>
     </div>
     <div class="collapse navbar-collapse" id="ab-navbar">
@@ -16,80 +16,81 @@
         <li class="hidden-xs adverts-count">{{ adverts_count_all() }}</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{{ _('Поиск') }}</a>
-             <ul class="dropdown-menu">
-                <li><a href="{{ locale() }}/poisk/avto/"><span class="ab ab-avto"></span>{{ _('Легковые') }}</a></li>
-                <li><a href="{{ locale() }}/poisk/avtobus/"><span class="ab ab-avtobus"></span>{{ _('Автобусы') }}</a></li>
-                <li><a href="{{ locale() }}/poisk/gruzovye/"><span class="ab ab-gruzovye"></span>{{ _('Грузовые') }}</a></li>
-                <li><a href="{{ locale() }}/poisk/moto/"><span class="ab ab-moto"></span>{{ _('Мото') }}</a></li>
-                <li><a href="{{ locale() }}/poisk/technics/"><span class="ab ab-technics"></span>{{ _('Спецтехника') }}</a></li>
-                <li><a href="{{ locale() }}/poisk/trailer/"><span class="ab ab-trailer"></span>{{ _('Прицепы') }}</a></li>
-                <li><a href="{{ locale() }}/poisk/water"><span class="ab ab-water"></span>{{ _('Водный') }}</a></li>
-                <li><a href="{{ locale() }}/poisk/avia/"><span class="ab ab-avia"></span>{{ _('Авиа') }}</a></li>
-                <li><a href="{{ locale() }}/zapchasti/partitions/"><span class="ab ab-spares"></span>{{ _('Запчасти') }}</a></li>
-                <li><a href="{{ locale() }}/garaji/"><span class="ab ab-garage"></span>{{ _('Гаражи') }}</a></li>
-                <li><a href="{{ locale() }}/buy/"><span class="ab ab-buy"></span>{{ _('Куплю') }}</a></li>
-                <li><a href="{{ locale() }}/uslugi/"><span class="ab ab-uslugi"></span>{{ _('Услуги') }}</a></li>
-                <li><a href="{{ locale() }}/rabota/"><span class="ab ab-job"></span>{{ _('Работа') }}</a></li>
-                <li><a href="{{ locale() }}/drugoe/"><span class="ab ab-file"></span>{{ _('Разное') }}</a></li>
-                <li><a href="{{ locale() }}/katalog/"><span class="ab ab-phone"></span>{{ _('Фирмы/Дилеры') }}</a></li>
-                <li><a href="{{ locale() }}/avtotovary/"><span class="ab ab-cart3"></span>{{ _('Товары') }}</a></li>
-              </ul>
-          </li>
-          <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{{ _('Продать') }}</a>
-             <ul class="dropdown-menu">
-                <li><a href="{{ locale() }}/add/car/"><span class="ab ab-avto"></span>{{ _('Легковые') }}</a></li>
-                <li><a href="{{ locale() }}/add/bus/"><span class="ab ab-avtobus"></span>{{ _('Автобусы') }}</a></li>
-                <li><a href="{{ locale() }}/add/truck/"><span class="ab ab-gruzovye"></span>{{ _('Грузовые') }}</a></li>
-                <li><a href="{{ locale() }}/add/moto/"><span class="ab ab-moto"></span>{{ _('Мото') }}</a></li>
-                <li><a href="{{ locale() }}/add/technics/"><span class="ab ab-technics"></span>{{ _('Спецтехника') }}</a></li>
-                <li><a href="{{ locale() }}/add/trailer/"><span class="ab ab-trailer"></span>{{ _('Прицепы') }}</a></li>
-                <li><a href="{{ locale() }}/add/water/"><span class="ab ab-water"></span>{{ _('Водный') }}</a></li>
-                <li><a href="{{ locale() }}/add/avia/"><span class="ab ab-avia"></span>{{ _('Авиа') }}</a></li>
-                <li><a href="{{ locale() }}/zapchasti/prodazha/"><span class="ab ab-spares"></span>{{ _('Запчасти') }}</a></li>
-                <li><a href="{{ locale() }}/prodazha/buy/"><span class="ab ab-buy"></span>{{ _('Куплю') }}</a></li>
-                <li><a href="{{ locale() }}/prodazha/raznoe/"><span class="ab ab-file"></span>{{ _('Разное') }}</a></li>
-                <!--<li><a href="javascript:void(0)"><span class="ab ab-question"></span>{{ _('Как продать?') }}</a></li>-->
-              </ul>
-          </li>
-          <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{{ _('Полезное') }}</a>
-             <ul class="dropdown-menu">
-                <li><a href="{{ locale() }}/katalog/">{{ _('Каталог фирм') }}</a></li>
-                <li><a href="{{ locale() }}/otzyvy/">{{ _('Тесты и отзывы') }}</a></li>
-                <li><a href="{{ locale() }}/newcars/news/">{{ _('Новости') }}</a></li>
-                <li><a href="http://notes.avtobazar.ua/">{{ _('Бортовой журнал') }}</a></li>
-                <li><a href="{{ locale() }}/valuation/">{{ _('Оценка авто') }}</a></li>
-                <li><a href="{{ locale() }}/tv/">{{ _('АвтоБазар TV') }}</a></li>
-                <li><a href="{{ locale() }}/iphone/">{{ _('iPhone') }}</a></li>
-                <li><a href="{{ locale() }}/android/">{{ _('Android') }}</a></li>
-                <li><a href="{{ locale() }}/poleznoe/sovety/">{{ _('Советы') }}</a></li>
-                <li><a href="{{ locale() }}/shinnyy-calculator/">{{ _('Шинный калькулятор') }}</a></li>
-                <li><a href="{{ locale() }}/katalog/country:ukraine/groups:sto:diagnostika-avto/">{{ _('Диагностика Авто') }}</a></li>
-                <li><a href="{{ locale() }}/katalog/country:ukraine/groups:avtokreditovanie/">{{ _('Автокредитирование') }}</a></li>
-                <li><a href="{{ locale() }}/help/main/">{{ _('Помощь') }}</a></li>
-              </ul>
-          </li>
-          <li><a href="{{ locale() }}/avtosalony/" class="dropdown-toggle" data-toggle="dropdown">{{ _('Салоны') }}</a>
-             <ul class="dropdown-menu">
-                <!--<li><a href="{{ locale() }}/dealer/">{{ _('Как стать дилером') }}</a></li>-->
-                <!--<li><a href="{{ locale() }}/avtosalony/new/">{{ _('Тарифные планы') }}</a></li>-->
-                <li><a href="{{ locale() }}/avtosalony/poisk/?rubric=car"><span class="ab ab-avto"></span>{{ _('Легковые') }}</a></li>
-               <li><a href="{{ locale() }}/motosalony/"><span class="ab ab-moto"></span>{{ _('Мототранпорт') }}</a></li>
-               <li><a href="{{ locale() }}/avtobus/salony/"><span class="ab ab-avtobus"></span>{{ _('Автобусы') }}</a></li>
-                <li><a href="{{ locale() }}/gruzovye/salony/"><span class="ab ab-gruzovye"></span>{{ _('Грузовые') }}</a></li>
+        <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{{ _('Поиск') }}</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ locale() }}/poisk/avto/"><span class="ab ab-avto"></span>{{ _('Легковые') }}</a></li>
+            <li><a href="{{ locale() }}/poisk/avtobus/"><span class="ab ab-avtobus"></span>{{ _('Автобусы') }}</a></li>
+            <li><a href="{{ locale() }}/poisk/gruzovye/"><span class="ab ab-gruzovye"></span>{{ _('Грузовые') }}</a></li>
+            <li><a href="{{ locale() }}/poisk/moto/"><span class="ab ab-moto"></span>{{ _('Мото') }}</a></li>
+            <li><a href="{{ locale() }}/poisk/technics/"><span class="ab ab-technics"></span>{{ _('Спецтехника') }}</a></li>
+            <li><a href="{{ locale() }}/poisk/trailer/"><span class="ab ab-trailer"></span>{{ _('Прицепы') }}</a></li>
+            <li><a href="{{ locale() }}/poisk/water"><span class="ab ab-water"></span>{{ _('Водный') }}</a></li>
+            <li><a href="{{ locale() }}/poisk/avia/"><span class="ab ab-avia"></span>{{ _('Авиа') }}</a></li>
+            <li><a href="{{ locale() }}/zapchasti/partitions/"><span class="ab ab-spares"></span>{{ _('Запчасти') }}</a></li>
+            <li><a href="{{ locale() }}/garaji/"><span class="ab ab-garage"></span>{{ _('Гаражи') }}</a></li>
+            <li><a href="{{ locale() }}/buy/"><span class="ab ab-buy"></span>{{ _('Куплю') }}</a></li>
+            <li><a href="{{ locale() }}/uslugi/"><span class="ab ab-uslugi"></span>{{ _('Услуги') }}</a></li>
+            <li><a href="{{ locale() }}/rabota/"><span class="ab ab-job"></span>{{ _('Работа') }}</a></li>
+            <li><a href="{{ locale() }}/drugoe/"><span class="ab ab-file"></span>{{ _('Разное') }}</a></li>
+            <li><a href="{{ locale() }}/katalog/"><span class="ab ab-phone"></span>{{ _('Фирмы/Дилеры') }}</a></li>
+            <li><a href="{{ locale() }}/avtotovary/"><span class="ab ab-cart3"></span>{{ _('Товары') }}</a></li>
+          </ul>
+        </li>
+        <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{{ _('Продать') }}</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ locale() }}/add/car/"><span class="ab ab-avto"></span>{{ _('Легковые') }}</a></li>
+            <li><a href="{{ locale() }}/add/bus/"><span class="ab ab-avtobus"></span>{{ _('Автобусы') }}</a></li>
+            <li><a href="{{ locale() }}/add/truck/"><span class="ab ab-gruzovye"></span>{{ _('Грузовые') }}</a></li>
+            <li><a href="{{ locale() }}/add/moto/"><span class="ab ab-moto"></span>{{ _('Мото') }}</a></li>
+            <li><a href="{{ locale() }}/add/technics/"><span class="ab ab-technics"></span>{{ _('Спецтехника') }}</a></li>
+            <li><a href="{{ locale() }}/add/trailer/"><span class="ab ab-trailer"></span>{{ _('Прицепы') }}</a></li>
+            <li><a href="{{ locale() }}/add/water/"><span class="ab ab-water"></span>{{ _('Водный') }}</a></li>
+            <li><a href="{{ locale() }}/add/avia/"><span class="ab ab-avia"></span>{{ _('Авиа') }}</a></li>
+            <li><a href="{{ locale() }}/zapchasti/prodazha/"><span class="ab ab-spares"></span>{{ _('Запчасти') }}</a></li>
+            <li><a href="{{ locale() }}/prodazha/buy/"><span class="ab ab-buy"></span>{{ _('Куплю') }}</a></li>
+            <li><a href="{{ locale() }}/prodazha/raznoe/"><span class="ab ab-file"></span>{{ _('Разное') }}</a></li>
+            <!--<li><a href="javascript:void(0)"><span class="ab ab-question"></span>{{ _('Как продать?') }}</a></li>-->
+          </ul>
+        </li>
+        <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{{ _('Полезное') }}</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ locale() }}/katalog/">{{ _('Каталог фирм') }}</a></li>
+            <li><a href="{{ locale() }}/otzyvy/">{{ _('Тесты и отзывы') }}</a></li>
+            <li><a href="{{ locale() }}/newcars/news/">{{ _('Новости') }}</a></li>
+            <li><a href="http://notes.avtobazar.ua/">{{ _('Бортовой журнал') }}</a></li>
+            <li><a href="{{ locale() }}/valuation/">{{ _('Оценка авто') }}</a></li>
+            <li><a href="{{ locale() }}/tv/">{{ _('АвтоБазар TV') }}</a></li>
+            <li><a href="{{ locale() }}/iphone/">{{ _('iPhone') }}</a></li>
+            <li><a href="{{ locale() }}/android/">{{ _('Android') }}</a></li>
+            <li><a href="{{ locale() }}/poleznoe/sovety/">{{ _('Советы') }}</a></li>
+            <li><a href="{{ locale() }}/shinnyy-calculator/">{{ _('Шинный калькулятор') }}</a></li>
+            <li><a href="{{ locale() }}/katalog/country:ukraine/groups:sto:diagnostika-avto/">{{ _('Диагностика Авто') }}</a></li>
+            <li><a href="{{ locale() }}/katalog/country:ukraine/groups:avtokreditovanie/">{{ _('Автокредитирование') }}</a></li>
+            <li><a href="{{ locale() }}/help/main/">{{ _('Помощь') }}</a></li>
+          </ul>
+        </li>
+        <li><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{{ _('Салоны') }}</a>
+          <ul class="dropdown-menu">
+            <!--<li><a href="{{ locale() }}/dealer/">{{ _('Как стать дилером') }}</a></li>-->
+            <!--<li><a href="{{ locale() }}/avtosalony/new/">{{ _('Тарифные планы') }}</a></li>-->
+            <li><a href="{{ locale() }}/avtosalony/"><span class="ab ab-office"></span>{{ _('Все салоны') }}</a></li>
+            <li><a href="{{ locale() }}/avtosalony/poisk/?rubric=car"><span class="ab ab-avto"></span>{{ _('Легковые') }}</a></li>
+            <li><a href="{{ locale() }}/motosalony/"><span class="ab ab-moto"></span>{{ _('Мототранпорт') }}</a></li>
+            <li><a href="{{ locale() }}/avtobus/salony/"><span class="ab ab-avtobus"></span>{{ _('Автобусы') }}</a></li>
+            <li><a href="{{ locale() }}/gruzovye/salony/"><span class="ab ab-gruzovye"></span>{{ _('Грузовые') }}</a></li>
 
-                <li><a href="{{ locale() }}/spectehnika/salony/"><span class="ab ab-technics"></span>{{ _('Спецтехника') }}</a></li>
-                <li><a href="{{ locale() }}/pricep/salony/"><span class="ab ab-trailer"></span>{{ _('Прицепы') }}</a></li>
-                <li><a href="{{ locale() }}/avtosalony/poisk/?rubric=water"><span class="ab ab-water"></span>{{ _('Водный транспорт') }}</a></li>
-              </ul>
-          </li>
-          <li class="moy-avtobazar">
-            {% if request.user.is_authenticated() %}
-                <a href="{{ locale() }}/moy-avtobazar/">{{ _('Мой АвтоБазар') }}</a>
-            {% else %}
-                <a href="{{ locale() }}/favorites/avto/">{{ _('Мой АвтоБазар') }}</a>
-            {% endif %}
-          </li>
+            <li><a href="{{ locale() }}/spectehnika/salony/"><span class="ab ab-technics"></span>{{ _('Спецтехника') }}</a></li>
+            <li><a href="{{ locale() }}/pricep/salony/"><span class="ab ab-trailer"></span>{{ _('Прицепы') }}</a></li>
+            <li><a href="{{ locale() }}/avtosalony/poisk/?rubric=water"><span class="ab ab-water"></span>{{ _('Водный транспорт') }}</a></li>
+          </ul>
+        </li>
+        <li class="moy-avtobazar">
+          {% if request.user.is_authenticated() %}
+            <a href="{{ locale() }}/moy-avtobazar/">{{ _('Мой АвтоБазар') }}</a>
+          {% else %}
+            <a href="{{ locale() }}/favorites/avto/">{{ _('Мой АвтоБазар') }}</a>
+          {% endif %}
+        </li>
       </ul>
     </div>
   </div>

@@ -253,3 +253,44 @@ def render_alternate_link(request):
             html.append(u'<link rel="alternate" hreflang="%s" href="http://avtobazar.ua%s" />' % (lang, path))
     html.append(u'<meta http-equiv="content-Language" content="%s" />' % current_language)
     return  Markup(''.join(html))
+
+
+@library.global_function
+def render_seo_rel_link(request, pages=0):
+    result = []
+    path = request.path
+    if request.META['QUERY_STRING'] and not request.GET.get('seo_category', None) and not request.GET.get('cs', None) \
+        and not request.GET.get('credit_only', None) and not request.GET.get('retro', None) \
+        and not request.GET.get('hot_only', None) and not request.GET.get('country_page', None):
+        path = request.get_full_path()
+        if request.GET.get('order', None):
+            excluded_texts = ['order=price_base', 'order=year', 'order=date_last_modify']
+            for text in excluded_texts:
+                to_exclude = path.rfind(text)
+                if to_exclude != -1:
+                    path = path[:(to_exclude - 1)] + path[(to_exclude + len(text)):]
+    if request.is_secure():
+        result.append(u'<link rel="canonicial" href="https://avtobazar.ua%s" >' % path)
+    else:
+        result.append(u'<link rel="canonicial" href="http://avtobazar.ua%s" >' % path)
+    if pages > 1:
+        try:
+            current_page = int(request.GET.get('page', 0))
+        except (ValueError, TypeError):
+            current_page = 0
+        if current_page:
+            if current_page > 1:
+                prev_page = current_page - 1
+                new_path = path.replace(('page=' + request.GET['page']), ('page=' + str(prev_page)))
+                result.append(u'<link rel="prev" href="http://avtobazar.ua%s">' % new_path)
+            if current_page != pages:
+                next_page = current_page + 1
+                new_path = path.replace(('page=' + request.GET['page']), ('page=' + str(next_page)))
+                result.append(u'<link rel="next" href="http://avtobazar.ua%s">' % new_path)
+        else:
+            if request.META['QUERY_STRING']:
+                path += '&page=2'
+            else:
+                path += '?page=2'
+            result.append(u'<link rel="next" href="http://avtobazar.ua%s">' % path)
+    return Markup(''.join(result))
