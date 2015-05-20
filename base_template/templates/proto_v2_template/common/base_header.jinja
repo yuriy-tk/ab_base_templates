@@ -7,39 +7,40 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="navbar-brand" href="#">AvtoBazar</a>
+            <p class="logo">AvtoBazar</p>
+            <div class='add_advert_ab row visible-xs' id='add_advert_ab'>
+                <a class="add_car_btn" href="{{ locale() }}/add/car/" title="{{ _('Добавить объявление') }}"
+                   data-toggle="tooltip" data-placement="bottom">
+                    <i class="fa fa-plus"></i> <span class="visible-xs">"{{ _('Добавить объявление') }}"</span>
+                </a>
+            </div>
         </div>
         <div id="slidemenu">
+            <div class='visible-xs' id='profile_card_top'></div>
             <ul class="nav navbar-nav">
-                <li class="ab_sidebar_header visible-xs">
-                    {% block header_sidebar_well %}
-                    <p class="logo">AvtoBazar</p>
-                    {{ adverts_count_all(template='proto_v2_template/common/adverts_count_all.jinja') }}
-                    {% endblock %}
-                </li>
                 {% block header_menu_lists_items %}
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i> {{ _('Поиск') }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ locale() }}/poisk/avto/"><i class="ab ab-avto"></i>{{ _('Легковые') }}</a></li>
-                    <li><a href="{{ locale() }}/poisk/avtobus/"><i class="ab ab-avtobus"></i>{{ _('Автобусы') }}</a></li>
-                    <li><a href="{{ locale() }}/poisk/gruzovye/"><i class="ab ab-gruzovye"></i>{{ _('Грузовые') }}</a></li>
-                    <li><a href="{{ locale() }}/poisk/moto/"><i class="ab ab-moto"></i>{{ _('Мото') }}</a></li>
-                    <li><a href="{{ locale() }}/poisk/technics/"><i class="ab ab-technics"></i>{{ _('Спецтехника') }}</a></li>
-                    <li><a href="{{ locale() }}/poisk/trailer/"><i class="ab ab-trailer"></i>{{ _('Прицепы') }}</a></li>
-                    <li><a href="{{ locale() }}/poisk/water"><i class="ab ab-water"></i>{{ _('Водный') }}</a></li>
-                    <li><a href="{{ locale() }}/poisk/avia/"><i class="ab ab-avia"></i>{{ _('Авиа') }}</a></li>
-                    <li><a href="{{ locale() }}/zapchasti/partitions/"><i class="ab ab-spares"></i>{{ _('Запчасти') }}</a></li>
-                    <li><a href="{{ locale() }}/garaji/"><i class="ab ab-garage"></i>{{ _('Гаражи') }}</a></li>
-                    <li><a href="{{ locale() }}/buy/"><i class="ab ab-buy"></i>{{ _('Куплю') }}</a></li>
-                    <li><a href="{{ locale() }}/uslugi/"><i class="ab ab-uslugi"></i>{{ _('Услуги') }}</a></li>
-                    <li><a href="{{ locale() }}/rabota/"><i class="ab ab-job"></i>{{ _('Работа') }}</a></li>
-                    <li><a href="{{ locale() }}/drugoe/"><i class="ab ab-file"></i>{{ _('Разное') }}</a></li>
-                    <li><a href="{{ locale() }}/katalog/"><i class="ab ab-phone"></i>{{ _('Фирмы/Дилеры') }}</a></li>
-                    <li><a href="{{ locale() }}/avtotovary/"><i class="ab ab-cart3"></i>{{ _('Товары') }}</a></li>
+                        <li><a href="{{ locale() }}/poisk/avtobus/"><i class="ab ab-avtobus"></i>{{ _('Автобусы') }}</a></li>
+                        <li><a href="{{ locale() }}/poisk/gruzovye/"><i class="ab ab-gruzovye"></i>{{ _('Грузовые') }}</a></li>
+                        <li><a href="{{ locale() }}/poisk/moto/"><i class="ab ab-moto"></i>{{ _('Мото') }}</a></li>
+                        <li><a href="{{ locale() }}/poisk/technics/"><i class="ab ab-technics"></i>{{ _('Спецтехника') }}</a></li>
+                        <li><a href="{{ locale() }}/poisk/trailer/"><i class="ab ab-trailer"></i>{{ _('Прицепы') }}</a></li>
+                        <li><a href="{{ locale() }}/poisk/water"><i class="ab ab-water"></i>{{ _('Водный') }}</a></li>
+                        <li><a href="{{ locale() }}/poisk/avia/"><i class="ab ab-avia"></i>{{ _('Авиа') }}</a></li>
+                        <li><a href="{{ locale() }}/zapchasti/partitions/"><i class="ab ab-spares"></i>{{ _('Запчасти') }}</a></li>
+                        <li><a href="{{ locale() }}/garaji/"><i class="ab ab-garage"></i>{{ _('Гаражи') }}</a></li>
+                        <li><a href="{{ locale() }}/buy/"><i class="ab ab-buy"></i>{{ _('Куплю') }}</a></li>
+                        <li><a href="{{ locale() }}/uslugi/"><i class="ab ab-uslugi"></i>{{ _('Услуги') }}</a></li>
+                        <li><a href="{{ locale() }}/rabota/"><i class="ab ab-job"></i>{{ _('Работа') }}</a></li>
+                        <li><a href="{{ locale() }}/drugoe/"><i class="ab ab-file"></i>{{ _('Разное') }}</a></li>
+                        <li><a href="{{ locale() }}/katalog/"><i class="ab ab-phone"></i>{{ _('Фирмы/Дилеры') }}</a></li>
+                        <li><a href="{{ locale() }}/avtotovary/"><i class="ab ab-cart3"></i>{{ _('Товары') }}</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown hidden-md hidden-sm">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-money"></i> {{ _('Продать') }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ locale() }}/add/car/"><i class="ab ab-avto"></i>{{ _('Легковые') }}</a></li>
@@ -55,7 +56,7 @@
                         <li><a href="{{ locale() }}/prodazha/raznoe/"><i class="ab ab-file"></i>{{ _('Разное') }}</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown hidden-md hidden-sm">
                     <a href="#contact" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lightbulb-o"></i> {{ _('Полезное') }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ locale() }}/katalog/">{{ _('Каталог фирм') }}</a></li>
@@ -86,57 +87,21 @@
                         <li><a href="{{ locale() }}/avtosalony/poisk/?rubric=water"><i class="ab ab-water"></i>{{ _('Водный транспорт') }}</a></li>
                     </ul>
                 </li>
-{#                <li>#}
-{#                    <a href="#contact"><i class="fa fa-support"></i> Помощь</a>#}
-{#                </li>#}
+                {#                <li>#}
+                {#                    <a href="#contact"><i class="fa fa-support"></i> Помощь</a>#}
+                {#                </li>#}
                 {% endblock %}
             </ul>
 
-            {% block header_text_search_form %}
-            <form class="navbar-form navbar-right visible-lg" role="search">
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="{{ _('Найти') }}...">
-                          <span class="input-group-btn">
-                            <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-                          </span>
-                    </div>
+            <ul class='nav navbar-nav' id='my_ab'></ul>
+
+            <div id="right_navigation"></div>
+
+            <div class='visible-xs' id='advert_counts'>
+                <div class="col-xs-12">
+                    {{ adverts_count_all(template='proto_v2_template/common/adverts_count_all.jinja') }}
                 </div>
-            </form>
-            {% endblock %}
-            <ul class="nav navbar-nav navbar-right">
-                {% block header_right_menu_lists_items %}
-                <li class="dropdown hidden-xs locale_switcher">{{ locale_switcher(request, template='proto_v2_template/common/locale_switcher.jinja') }}</li>
-                <li>
-                    <a class="add_car_btn" href="{{ locale() }}/add/car/" title="{{ _('Добавить объявление') }}"
-                       data-toggle="tooltip" data-placement="bottom">
-                        <i class="fa fa-plus"></i> <span class="visible-xs">{{ _('Добавить объявление') }}</span>
-                    </a>
-                </li>
-                {% if request.user.is_authenticated() %}
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cogs"></i> {# { _('Мой Автобазар') }#} {{ request.user.email }} <span class="caret"></span></a>
-                    <ul class="dropdown-menu main-dropdown-menu" role="menu">
-                        {% block personal_menu_lists_items %}
-
-                        <li><a href="{{ locale() }}/personal/profile/"><i class="fa fa-user"></i> {{ _('Профиль') }}</a></li>
-                        <li><a href="{{ locale() }}/personal/list/classes/avto/"><i class="fa fa-archive"></i> {{ _('Объявления') }}</a></li>
-                        <li><a href="{{ locale() }}/favorites/avto/"><i class="fa fa-star"></i> {{ _('Избранное') }}</a></li>
-                        <li><a href="{{ locale() }}/personal/msg/"><i class="fa fa-comments"></i> {{ _('Сообщения') }}</a></li>
-                        <li><a href="{{ locale() }}/personal/statistics/summary/"><i class="fa fa-area-chart"></i> {{ _('Статистика') }}</a></li>
-                        <li><a href="{{ locale() }}/personal/payments/"><i class="fa fa-credit-card"></i> {{ _('Оплаты') }}</a></li>
-{#                        <li class="divider"></li>#}
-{#                        <li><a href="">{{ _('Еще') }}</a></li>#}
-                        {% endblock %}
-                    </ul>
-                </li>
-                {% else %}
-                <li>
-                 <a href="{{ locale() }}/auth/login/simple/?next={{ request.path }}" ><i class="fa fa-sign-in"></i> {{ _('Вход') }}</a>
-                </li>
-                {% endif %}
-                {% endblock %}
-            </ul>
+            </div>
 
         </div>
     </div>
